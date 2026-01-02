@@ -1,318 +1,208 @@
 "use client";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { imageConfig } from "@/lib/imageConfig";
 
-import {
-  AnimatePresence,
-  animate,
-  easeOut,
-  motion,
-  useMotionValue,
-} from "framer-motion";
-import type React from "react";
-import { useEffect, useMemo, useRef, useState } from "react";
-import { cn } from "@/lib/utils"; // Assuming you have this utility for class names
+const ServicesSlider = () => {
+  const [activeIndex, setActiveIndex] = useState(1);
 
-export interface ThreeDImageRingProps {
-  /** Array of image URLs to display in the ring */
-  images: string[];
-  /** Container width in pixels (will be scaled) */
-  width?: number;
-  /** 3D perspective value */
-  perspective?: number;
-  /** Distance of images from center (z-depth) */
-  imageDistance?: number;
-  /** Initial rotation of the ring */
-  initialRotation?: number;
-  /** Animation duration for entrance */
-  animationDuration?: number;
-  /** Stagger delay between images */
-  staggerDelay?: number;
-  /** Hover opacity for non-hovered images */
-  hoverOpacity?: number;
-  /** Custom container className */
-  containerClassName?: string;
-  /** Custom ring className */
-  ringClassName?: string;
-  /** Custom image className */
-  imageClassName?: string;
-  /** Background color of the stage */
-  backgroundColor?: string;
-  /** Enable/disable drag functionality */
-  draggable?: boolean;
-  /** Animation ease for entrance */
-  ease?: string;
-  /** Breakpoint for mobile responsiveness (e.g., 768 for iPad mini) */
-  mobileBreakpoint?: number;
-  /** Scale factor for mobile (e.g., 0.7 for 70% size) */
-  mobileScaleFactor?: number;
-  /** Power for the drag end inertia animation (higher means faster stop) */
-  inertiaPower?: number;
-  /** Time constant for the drag end inertia animation (duration of deceleration in ms) */
-  inertiaTimeConstant?: number;
-  /** Multiplier for initial velocity when drag ends (influences initial "spin") */
-  inertiaVelocityMultiplier?: number;
-}
-
-export function ThreeDImageRing({
-  images,
-  width = 300,
-  perspective = 2000,
-  imageDistance = 500,
-  initialRotation = 180,
-  animationDuration = 1.5,
-  staggerDelay = 0.1,
-  hoverOpacity = 0.5,
-  containerClassName,
-  ringClassName,
-  imageClassName,
-  backgroundColor,
-  draggable = true,
-  ease = "easeOut",
-  mobileBreakpoint = 768,
-  mobileScaleFactor = 0.8,
-  inertiaPower = 0.8, // Default power for inertia
-  inertiaTimeConstant = 300, // Default time constant for inertia
-  inertiaVelocityMultiplier = 20, // Default multiplier for initial spin
-}: ThreeDImageRingProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const ringRef = useRef<HTMLDivElement>(null);
-
-  const rotationY = useMotionValue(initialRotation);
-  const startX = useRef<number>(0);
-  const currentRotationY = useRef<number>(initialRotation);
-  const isDragging = useRef<boolean>(false);
-  const velocity = useRef<number>(0); // To track drag velocity
-
-  const [currentScale, setCurrentScale] = useState(1);
-  const [showImages, setShowImages] = useState(false);
-
-  const angle = useMemo(() => 360 / images.length, [images.length]);
-
-  const getBgPos = (imageIndex: number, currentRot: number, scale: number) => {
-    const scaledImageDistance = imageDistance * scale;
-    const effectiveRotation = currentRot - 180 - imageIndex * angle;
-    const parallaxOffset = (((effectiveRotation % 360) + 360) % 360) / 360;
-    return `${-(parallaxOffset * (scaledImageDistance / 1.5))}px 0px`;
-  };
+  const slides = [
+    {
+      id: 1,
+      image: "aboutUsImg.png",
+      title: "Web Development",
+      description: "Custom web solutions",
+    },
+    {
+      id: 2,
+      image: "aboutUsImg.png",
+      title: "Digital Solutions",
+      description: "Innovative technology",
+    },
+    {
+      id: 3,
+      image: "aboutUsImg.png",
+      title: "Code Architecture",
+      description: "Scalable systems",
+    },
+    {
+      id: 4,
+      image: "aboutUsImg.png",
+      title: "Mobile Apps",
+      description: "Cross-platform development",
+    },
+    {
+      id: 5,
+      image: "aboutUsImg.png",
+      title: "Cloud Solutions",
+      description: "Scalable infrastructure",
+    },
+  ];
 
   useEffect(() => {
-    const unsubscribe = rotationY.on("change", (latestRotation) => {
-      if (ringRef.current) {
-        Array.from(ringRef.current.children).forEach((imgElement, i) => {
-          (imgElement as HTMLElement).style.backgroundPosition = getBgPos(
-            i,
-            latestRotation,
-            currentScale,
-          );
-        });
-      }
-      currentRotationY.current = latestRotation;
-    });
-    return () => unsubscribe();
-  }, [rotationY, images.length, imageDistance, currentScale, angle]);
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % slides.length);
+    }, 3000); // Change slide every 3 seconds
 
-  useEffect(() => {
-    const handleResize = () => {
-      const viewportWidth = window.innerWidth;
-      const newScale =
-        viewportWidth <= mobileBreakpoint ? mobileScaleFactor : 1;
-      setCurrentScale(newScale);
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, [mobileBreakpoint, mobileScaleFactor]);
-
-  useEffect(() => {
-    setShowImages(true);
+    return () => clearInterval(interval);
   }, []);
 
-  const handleDragStart = (event: React.MouseEvent | React.TouchEvent) => {
-    if (!draggable) return;
-    isDragging.current = true;
-    const clientX =
-      "touches" in event ? event.touches[0].clientX : event.clientX;
-    startX.current = clientX;
-    // Stop any ongoing animation instantly when drag starts
-    rotationY.stop();
-    velocity.current = 0; // Reset velocity
-    if (ringRef.current) {
-      (ringRef.current as HTMLElement).style.cursor = "grabbing";
+  const getSlideStyles = (index: number) => {
+    const totalSlides = slides.length;
+    let diff = index - activeIndex;
+
+    // Handle wrapping for full 360 rotation
+    if (diff > totalSlides / 2) diff -= totalSlides;
+    if (diff < -totalSlides / 2) diff += totalSlides;
+
+    // Center slide
+    if (diff === 0) {
+      return {
+        transform: "translateX(0%) translateZ(0px) scale(1, 1)",
+        zIndex: 50,
+        opacity: 1,
+        filter: "brightness(1)",
+      };
     }
-    // Attach global move and end listeners to document when dragging starts
-    document.addEventListener("mousemove", handleDrag);
-    document.addEventListener("mouseup", handleDragEnd);
-    document.addEventListener("touchmove", handleDrag);
-    document.addEventListener("touchend", handleDragEnd);
-  };
-
-  const handleDrag = (event: MouseEvent | TouchEvent) => {
-    // Only proceed if dragging is active
-    if (!draggable || !isDragging.current) return;
-
-    const clientX =
-      "touches" in event
-        ? (event as TouchEvent).touches[0].clientX
-        : (event as MouseEvent).clientX;
-    const deltaX = clientX - startX.current;
-
-    // Update velocity based on deltaX
-    velocity.current = -deltaX * 0.5; // Factor of 0.5 to control sensitivity
-
-    rotationY.set(currentRotationY.current + velocity.current);
-
-    startX.current = clientX;
-  };
-
-  const handleDragEnd = () => {
-    isDragging.current = false;
-    if (ringRef.current) {
-      ringRef.current.style.cursor = "grab";
-      currentRotationY.current = rotationY.get();
+    // Left side slides
+    else if (diff === -1) {
+      return {
+        transform:
+          "translateX(-110%) translateZ(150px) rotateY(35deg) scale(0.95, 1)",
+        zIndex: 40,
+        opacity: 0.85,
+        filter: "brightness(0.7)",
+      };
+    }
+    // Right side slides
+    else if (diff === 1) {
+      return {
+        transform:
+          "translateX(110%) translateZ(150px) rotateY(-35deg) scale(0.95, 1)",
+        zIndex: 40,
+        opacity: 0.85,
+        filter: "brightness(0.7)",
+      };
     }
 
-    document.removeEventListener("mousemove", handleDrag);
-    document.removeEventListener("mouseup", handleDragEnd);
-    document.removeEventListener("touchmove", handleDrag);
-    document.removeEventListener("touchend", handleDragEnd);
-
-    const initial = rotationY.get();
-    const velocityBoost = velocity.current * inertiaVelocityMultiplier;
-    const target = initial + velocityBoost;
-
-    // Animate with inertia manually using `animate()`
-    animate(initial, target, {
-      type: "inertia",
-      velocity: velocityBoost,
-      power: inertiaPower,
-      timeConstant: inertiaTimeConstant,
-      restDelta: 0.5,
-      modifyTarget: (target) => Math.round(target / angle) * angle,
-      onUpdate: (latest) => {
-        rotationY.set(latest);
-      },
-    });
-
-    velocity.current = 0;
-  };
-
-  // Corrected imageVariants: no function for 'visible' state
-  const imageVariants = {
-    hidden: { y: 200, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      // Transition properties will be defined directly on the motion.div using `custom` prop
-    },
+    // Hidden slides (allows full 360 rotation)
+    return {
+      transform: "translateX(0%) translateZ(-200px) scale(0.5, 1)",
+      zIndex: 0,
+      opacity: 0,
+      filter: "brightness(0)",
+    };
   };
 
   return (
-    <div
-      ref={containerRef}
-      className={cn(
-        "w-full overflow-hidden select-none bg-[#0F0002] relative h-[80vh]",
-        containerClassName,
-      )}
-      style={{
-        backgroundColor,
-        transform: `scale(${currentScale})`,
-        transformOrigin: "center center",
-      }}
-      // Attach initial drag start listeners only
-      onMouseDown={draggable ? handleDragStart : undefined}
-      onTouchStart={draggable ? handleDragStart : undefined}
-    >
-      <div className="text-center py-6">
-        <h3 className="text-white italic">Our Services</h3>
-        <h2 className="text-white font-bold text-2xl">
+    <div className="py-10 bg-linear-to-br from-gray-900 via-black to-gray-900 flex flex-col items-center justify-center  overflow-hidden">
+      {/* Header */}
+      <div className="space-y-1 text-center">
+        <h3 className="italic font-semibold text-white">Our Services</h3>
+        <h2 className="font-bold text-2xl text-white">
           Lorem ipsum dolor sit amet consectetur
         </h2>
       </div>
+
+      {/* Slider Container with 3D Perspective */}
       <div
-        style={{
-          perspective: `${perspective}px`,
-          width: `${width}px`,
-          height: `${width * 1.33}px`,
-          position: "absolute",
-          left: "50%",
-          top: "50%",
-          transform: "translate(-50%, -50%)",
-        }}
+        className="relative w-full max-w-10xl h-[500px] flex items-center justify-center"
+        style={{ perspective: "800px" }}
       >
-        <motion.div
-          ref={ringRef}
-          className={cn("w-full h-full absolute", ringClassName)}
+        {/* Slides */}
+        <div
+          className="relative w-full h-full"
+          style={{ transformStyle: "preserve-3d" }}
+        >
+          {slides.map((slide, index) => {
+            const styles = getSlideStyles(index);
+
+            return (
+              <Button
+                key={slide.id}
+                type="button"
+                className="absolute top-1/2 left-1/2 w-full max-w-md h-96 cursor-pointer transition-all duration-700 ease-out bg-transparent border-none p-0 focus:outline-none"
+                style={{
+                  transform: `translate(-50%, -50%) ${styles.transform}`,
+                  zIndex: styles.zIndex,
+                  opacity: styles.opacity,
+                  filter: styles.filter,
+                  transformStyle: "preserve-3d",
+                }}
+                onClick={() => setActiveIndex(index)}
+              >
+                <div
+                  className="relative w-full h-full overflow-hidden shadow-2xl border border-white/10"
+                  style={{
+                    backfaceVisibility: "hidden",
+                    WebkitBackfaceVisibility: "hidden",
+                  }}
+                >
+                  <Image
+                    src={imageConfig.url(slide.image)}
+                    alt={slide.title}
+                    width={200}
+                    height={200}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/10 to-transparent" />
+                </div>
+              </Button>
+            );
+          })}
+        </div>
+      </div>
+      {/*  */}
+      <div className="relative w-[400px] h-[400px] mt-10 flex items-center justify-center">
+        {/* Center Logo */}
+        <div className="absolute z-20">
+          <Image
+            src={imageConfig.url("zinavologo.png")}
+            alt="logo"
+            width={60}
+            height={60}
+          />
+        </div>
+
+        {/* Rotating Title Ring */}
+        <div
+          className="absolute w-full h-full transition-transform duration-700 ease-out"
           style={{
-            transformStyle: "preserve-3d",
-            rotateY: rotationY,
-            cursor: draggable ? "grab" : "default",
+            transform: `rotate(${-activeIndex * (360 / slides.length)}deg)`,
           }}
         >
-          <AnimatePresence>
-            {showImages &&
-              images.map((imageUrl, index) => (
-                <motion.div
-                  key={index}
-                  className={cn("w-full h-full absolute", imageClassName)}
-                  style={{
-                    transformStyle: "preserve-3d",
-                    backgroundImage: `url(${imageUrl})`,
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                    backfaceVisibility: "hidden",
-                    rotateY: index * -angle,
-                    z: -imageDistance * currentScale,
-                    transformOrigin: `50% 50% ${
-                      imageDistance * currentScale
-                    }px`,
-                    backgroundPosition: getBgPos(
-                      index,
-                      currentRotationY.current,
-                      currentScale,
-                    ),
-                  }}
-                  initial="hidden"
-                  animate="visible"
-                  exit="hidden"
-                  variants={imageVariants} // Use the simplified variants object
-                  custom={index} // Pass the index as a custom prop
-                  transition={{
-                    delay: index * staggerDelay, // Use index directly in transition
-                    duration: animationDuration,
-                    ease: easeOut, // Apply ease for entrance animation
-                  }}
-                  whileHover={{ opacity: 1, transition: { duration: 0.15 } }}
-                  onHoverStart={() => {
-                    // Prevent hover effects while dragging
-                    if (isDragging.current) return;
-                    if (ringRef.current) {
-                      Array.from(ringRef.current.children).forEach(
-                        (imgEl, i) => {
-                          if (i !== index) {
-                            (imgEl as HTMLElement).style.opacity =
-                              `${hoverOpacity}`;
-                          }
-                        },
-                      );
-                    }
-                  }}
-                  onHoverEnd={() => {
-                    // Prevent hover effects while dragging
-                    if (isDragging.current) return;
-                    if (ringRef.current) {
-                      Array.from(ringRef.current.children).forEach((imgEl) => {
-                        (imgEl as HTMLElement).style.opacity = `1`;
-                      });
-                    }
-                  }}
-                />
-              ))}
-          </AnimatePresence>
-        </motion.div>
+          {slides.map((slide, index) => {
+            const angle = (360 / slides.length) * index;
+
+            return (
+              <div
+                key={slide.id}
+                className="absolute top-1/2 left-1/2 origin-bottom"
+                style={{
+                  transform: `
+              rotate(${angle}deg)
+              translateY(-180px)
+              rotate(${-angle}deg)
+            `,
+                }}
+              >
+                <p
+                  className={`text-white text-sm font-semibold tracking-wide transition-all duration-500 ${
+                    index === activeIndex
+                      ? "opacity-100 scale-110"
+                      : "opacity-60"
+                  }`}
+                >
+                  {slide.title}
+                </p>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
-}
+};
 
-export default ThreeDImageRing;
+export default ServicesSlider;
