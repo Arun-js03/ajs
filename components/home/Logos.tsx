@@ -1,6 +1,6 @@
 "use client";
-import { imageConfig } from "@/lib/imageConfig";
 import Image from "next/image";
+import { imageConfig } from "@/lib/imageConfig";
 
 const logos = [
   "/infinitelogo.png",
