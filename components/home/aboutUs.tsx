@@ -1,0 +1,67 @@
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { imageConfig } from "@/lib/imageConfig";
+
+const years = [
+  { id: 1, value: "13+ Year", title: "of Experience" },
+  { id: 2, value: "1000+ ", title: "Projects" },
+];
+export default function AboutUs() {
+  return (
+    <div className="bg-[#190103] space">
+      <div className="container grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+        <div className="space-y-4 text-white">
+          <h4 className="font-semibold italic text-lg">About Us</h4>
+
+          <h3 className="font-semibold text-2xl">
+            We Are Your Turnkey Partners in
+          </h3>
+          <h2 className="font-semibold text-4xl bg-[linear-gradient(180deg,#FF8A99_0%,#D00515_78.85%)] bg-clip-text text-transparent">
+            Web Development
+          </h2>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur. Sit id amet amet velit lorem
+            neque tincidunt mi tortor. Vestibulum vestibulum malesuada vel
+            feugiat ut ultrices. Lacus ut vitae semper egestas enim nisl tempor
+            nunc nulla. Adipiscing consequat maecenas venenatis elit non laoreet
+            varius massa et. Iaculis aenean magna rhoncus integer bibendum
+            mauris. Lorem ipsum dolor sit amet consectetur. Sit id amet amet
+            velit lorem neque tincidunt mi tortor. Vestibulum vestibulum
+            malesuada vel feugiat ut ultrices. Lacus ut vitae semper egestas
+            enim nisl tempor .
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur. Sit id amet amet velit lorem
+            neque tincidunt mi tortor. Vestibulum vestibulum malesuada vel
+            feugiat ut ultrices. Lacus ut vitae semper egestas enim nisl tempor
+            nunc nulla.{" "}
+          </p>
+          <Button>Learn More</Button>
+        </div>
+        <div>
+          <div>
+            <Image
+              src={imageConfig.url("/aboutUsImg.png")}
+              alt="About Us"
+              width={400}
+              height={400}
+              className="w-full h-full object-cover rounded-2xl"
+            />
+          </div>
+          <div className="text-white grid grid-cols-2 items-center gap-8 px-6 justify-center mt-3">
+            {years.map((year) => (
+              <div
+                key={year.id}
+                className="bg-[linear-gradient(180deg,rgba(25,1,3,0.75)_0%,#D00515_100%)] p-4 rounded-2xl justify-center flex flex-col items-center"
+              >
+                <h2 className="font-semibold text-2xl ">{year.value}</h2>
+                <h3 className=" text-lg italic">{year.title}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

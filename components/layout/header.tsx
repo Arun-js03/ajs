@@ -1,6 +1,5 @@
 "use client";
 
-import { imageConfig } from "@/lib/imageConfig";
 import { WhatsappIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
@@ -12,10 +11,11 @@ import {
   Twitter,
 } from "lucide-react";
 import type { Route } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { imageConfig } from "@/lib/imageConfig";
 export default function Header() {
   const pathname = usePathname();
 

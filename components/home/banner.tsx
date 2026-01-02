@@ -9,7 +9,7 @@ export default function Banner() {
         width={1920}
         height={300}
         alt="Banner"
-        className=" w-full"
+        className="w-full h-screen object-cover"
         priority
       />
     </div>

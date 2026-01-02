@@ -136,6 +136,9 @@ h6 {
 }
 p {
   @apply font-inter;
+  line-height: 2rem;
+  font-size: 0.9rem;
+  font-weight: 300;
 }
 @layer base {
   .space-top {
@@ -246,6 +249,39 @@ p {
   @media (min-width: 2560px) {
     .container {
       max-width: 1920px;
+    }
+  }
+}
+/* home page logos */
+@layer utilities {
+  .slider-left {
+    animation: slide-left var(--speed, 25s) linear infinite;
+  }
+
+  .slider-right {
+    animation: slide-right var(--speed, 25s) linear infinite;
+  }
+
+  .slider-left:hover,
+  .slider-right:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes slide-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes slide-right {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
     }
   }
 }
