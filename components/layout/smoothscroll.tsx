@@ -6,7 +6,13 @@ import { type ReactNode, useEffect } from "react";
 export default function SmoothScroll({ children }: { children: ReactNode }) {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 2, 
+      easing: (t) => 1 - (1 - t) ** 4,
+      smoothWheel: true,
+
+      wheelMultiplier: 0.8,
+      touchMultiplier: 1.5,
+      infinite: false,
     });
 
     function raf(time: number) {
@@ -15,7 +21,11 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
     }
 
     requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
   }, []);
 
-  return children;
+  return <>{children}</>;
 }

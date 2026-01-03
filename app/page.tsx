@@ -7,7 +7,6 @@ import ServicesSlider from "@/components/home/ourServices";
 import Testimonial from "@/components/home/testimonial";
 import WhyChoose from "@/components/home/whyChoose";
 
-
 export default function Page() {
   return (
     <div>
