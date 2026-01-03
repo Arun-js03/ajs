@@ -33,9 +33,9 @@ export default function LogoSlider({ direction = "left", speed = 25 }: Props) {
         }`}
         style={{ "--speed": `${speed}s` } as React.CSSProperties}
       >
-        {repeatLogos.map((logo, index) => (
+        {repeatLogos.map((logo, _index) => (
           <div
-            key={index}
+            key={logo}
             className="min-w-[100px] flex items-center justify-center"
           >
             <Image
