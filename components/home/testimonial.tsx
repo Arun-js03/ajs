@@ -2,7 +2,6 @@
 
 import AutoScroll from "embla-carousel-auto-scroll";
 import Image from "next/image";
-import * as React from "react";
 import {
   Carousel,
   CarouselContent,
@@ -77,17 +76,17 @@ export default function Testimonial() {
       <div className="mx-auto max-w-7xl px-4 flex flex-col items-center justify-center">
         <Carousel
           plugins={[
-            React.useRef(
-              AutoScroll({
-                speed: 1000,
-                stopOnInteraction: false,
-                stopOnMouseEnter: false,
-              })
-            ).current,
+            AutoScroll({
+              speed: 2.5,
+              startDelay: 0,
+              stopOnInteraction: false,
+              stopOnMouseEnter: true,
+            }),
           ]}
           opts={{
             align: "start",
             loop: true,
+            dragFree: true,
           }}
           className="w-full max-w-7xl mx-auto"
         >
@@ -115,7 +114,7 @@ function TestimonialCard({ text }: { text: string }) {
       {/* SVG BACKGROUND */}
       <svg
         viewBox="0 0 500 420"
-        className="absolute inset-0 w-full h-[470px] group-hover:base-shadow-lg transition-all duration-500"
+        className="absolute inset-0 w-full h-[470px] group-hover:drop-shadow-[0_20px_40px_rgba(236,72,153,0.3)] transition-all duration-500 ease-in-out cursor-pointer"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >

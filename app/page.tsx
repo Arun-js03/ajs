@@ -1,5 +1,6 @@
 import AboutUs from "@/components/home/aboutUs";
 import Banner from "@/components/home/banner";
+import FaqSec from "@/components/home/faqSec";
 import Industries from "@/components/home/industries";
 import LogoSlider from "@/components/home/Logos";
 import OurPortfolio from "@/components/home/ourPortfolio";
@@ -18,6 +19,7 @@ export default function Page() {
       <OurPortfolio />
       <Industries />
       <Testimonial />
+      <FaqSec />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Inter } from "next/font/google";
 import "./styles/globals.css";
+import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import SmoothScroll from "@/components/layout/smoothscroll";
 
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className="antialiased">
         <Header />
         <SmoothScroll>{children}</SmoothScroll>
+        <Footer />
       </body>
     </html>
   );
