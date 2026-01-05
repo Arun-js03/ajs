@@ -99,8 +99,10 @@ const ServicesSlider = () => {
     <div className="py-10 bg-linear-to-br from-gray-900 via-black to-gray-900 flex flex-col items-center justify-center  overflow-hidden">
       {/* Header */}
       <div className="space-y-1 text-center">
-        <h3 className="italic font-semibold text-white">Our Services</h3>
-        <h2 className="font-bold text-2xl text-white">
+        <h3 className="italic font-semibold text-2xl text-white">
+          Our Services
+        </h3>
+        <h2 className="font-bold text-3xl text-white">
           Lorem ipsum dolor sit amet consectetur
         </h2>
       </div>

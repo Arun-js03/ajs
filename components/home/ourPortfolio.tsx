@@ -5,8 +5,8 @@ export default function OurPortfolio() {
   return (
     <div className="container">
       <div className="space-y-1 text-center">
-        <h3 className="italic font-bold">Our Portfolio</h3>
-        <h2 className="font-bold text-2xl">
+        <h3 className="italic font-bold text-2xl">Our Portfolio</h3>
+        <h2 className="font-bold text-3xl">
           Lorem ipsum dolor sit amet consectetur
         </h2>
         <div className="grid grid-cols-3 gap-8 mt-4">

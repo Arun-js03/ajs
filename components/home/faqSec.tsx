@@ -19,9 +19,9 @@ export default function FaqSec() {
   return (
     <div className="bg-[#260205] py-6 mb-12 rounded-2xl">
       {/* Header */}
-      <div className="text-center text-white">
-        <h3 className="italic font-bold">FAQ</h3>
-        <h2 className="text-2xl font-bold">Frequently Asked Questions</h2>
+      <div className="text-center text-white space-y-2">
+        <h3 className="italic font-bold text-2xl">FAQ</h3>
+        <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
       </div>
 
       {/* Content */}

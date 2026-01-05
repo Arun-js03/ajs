@@ -10,13 +10,13 @@ export default function AboutUs() {
   return (
     <div className="bg-[#190103] space">
       <div className="container grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-        <div className="space-y-4 text-white">
-          <h4 className="font-semibold italic text-lg">About Us</h4>
+        <div className="space-y-4  text-white">
+          <h4 className="font-semibold italic text-2xl">About Us</h4>
 
-          <h3 className="font-semibold text-2xl">
+          <h3 className="font-semibold text-3xl">
             We Are Your Turnkey Partners in
           </h3>
-          <h2 className="font-semibold text-4xl bg-[linear-gradient(180deg,#FF8A99_0%,#D00515_78.85%)] bg-clip-text text-transparent">
+          <h2 className="font-semibold text-5xl bg-[linear-gradient(180deg,#FF8A99_0%,#D00515_78.85%)] bg-clip-text text-transparent">
             Web Development
           </h2>
 

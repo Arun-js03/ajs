@@ -68,8 +68,8 @@ export default function Testimonial() {
   return (
     <section className="bg-[#FFFAFA] py-5">
       <div className="text-center">
-        <h3 className="italic font-bold">Testimonial</h3>
-        <h2 className="font-bold text-2xl">
+        <h3 className="italic font-bold text-2xl">Testimonial</h3>
+        <h2 className="font-bold text-3xl">
           Review of Website Development Services
         </h2>
       </div>
