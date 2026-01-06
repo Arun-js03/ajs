@@ -49,7 +49,7 @@ export default function OurPortfolio() {
         <div className="grid grid-cols-3 gap-8 mt-4">
           <div className="bg-[#BCBBB9] col-span-1 rounded-2xl">
             <Image
-              src={imageConfig.url("/portfolioThree.png")}
+              src={imageConfig.url("/portfoliothree.png")}
               alt="Portfolio"
               width={500}
               height={500}
@@ -59,7 +59,7 @@ export default function OurPortfolio() {
           <div className="flex justify-between bg-[#BCBBB9] col-span-2 rounded-2xl">
             <div>
               <Image
-                src={imageConfig.url("/portfolioFour.png")}
+                src={imageConfig.url("/portfoliofour.png")}
                 alt="Portfolio"
                 width={500}
                 height={500}
