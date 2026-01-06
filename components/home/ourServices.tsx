@@ -99,7 +99,7 @@ const ServicesSlider = () => {
   return (
     <div className="relative py-10 flex flex-col items-center justify-center overflow-hidden">
       <Image
-        src={imageConfig.url("/ServiceBanner.png")}
+        src={imageConfig.url("/Servicebanner.png")}
         alt="ourServiceBanner"
         width={100}
         height={100}
