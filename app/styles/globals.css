@@ -285,4 +285,20 @@ p {
     }
   }
 }
-/* blog vertical slider */
+/* Blog vertical slider (placeholder comment from context) */
+
+@keyframes logo-glow {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.animate-logo-glow {
+  animation: logo-glow 2s ease-in-out infinite;
+}
