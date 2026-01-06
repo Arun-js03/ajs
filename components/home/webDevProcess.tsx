@@ -1,55 +1,91 @@
 "use client";
 
+import DevTapsContent from "@/components/home/devTaps";
+import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const tabData = [
-  { value: "uiux", label: "UI/UX Designer" },
-  { value: "frontend", label: "Front End Technologies" },
-  { value: "backend", label: "Backend Technologies" },
-  { value: "frameworks", label: "Frame Works" },
-  { value: "marketing", label: "Digital Marketing" },
+  {
+    value: "uiux",
+    label: "UI/UX Designer",
+    bgImage: "bg-Process.png",
+  },
+  {
+    value: "frontend",
+    label: "Front End Technologies",
+    bgImage: "bg-Process.png",
+  },
+  {
+    value: "backend",
+    label: "Backend Technologies",
+    bgImage: "bg-Process.png",
+  },
+  {
+    value: "frameworks",
+    label: "Frame Works",
+    bgImage: "bg-Process.png",
+  },
+  {
+    value: "marketing",
+    label: "Digital Marketing",
+    bgImage: "bg-Process.png",
+  },
 ];
-
-const TabContent = () => (
-  <div className="p-4">
-    {[1, 2, 3, 4].map((item) => (
-      <div
-        key={item}
-        className="h-24 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400"
-      >
-        Logo/Content
-      </div>
-    ))}
-  </div>
-);
 
 export default function WebsitesTabs() {
   return (
-    <section className="w-full py-12 container">
-      <div>
-        <h3 className="italic font-bold text-2xl">
-          Experience a Seamless Website Development Process
-        </h3>
-        <h2 className="font-bold text-3xl">
-          Lorem ipsum dolor sit amet consectetur
-        </h2>
+    <section className="w-full py-12 px-3">
+      <div className="flex items-center justify-between container mb-10 ">
+        <div className="text-center lg:text-left ">
+          <h3 className="italic font-bold text-2xl text-black">
+            Experience a Seamless Website Development Process
+          </h3>
+          <h2 className="font-bold text-3xl">
+            Lorem ipsum dolor sit amet consectetur
+          </h2>
+        </div>
+        <div>
+          <Button variant={"outline"} className="rounded-2xl! text-lg!">
+            Next
+          </Button>
+        </div>
       </div>
+
       {/* Tabs Header */}
       <Tabs defaultValue="frontend" className="w-full">
-        <TabsList className="flex justify-between border-b bg-transparent rounded-none">
+        <TabsList className="flex flex-wrap justify-between border-b-2! bg-transparent rounded-none h-auto p-0 mb-8 w-full gap-4 lg:gap-0">
           {tabData.map((tab) => (
             <TabsTrigger
               key={tab.value}
               value={tab.value}
               className="
-                relative px-6 py-3 text-sm font-semibold
-                data-[state=active]:text-red-600
-                data-[state=active]:after:absolute
-                data-[state=active]:after:left-0
-                data-[state=active]:after:bottom-0
-                data-[state=active]:after:h-[3px]
-                data-[state=active]:after:w-full
-                data-[state=active]:after:bg-red-600
+                relative px-4 py-4 font-bold text-black bg-transparent
+                hover:text-black transition-colors
+                border-b-2 border-transparent
+
+                data-[state=active]:text-black!
+                aria-selected:text-black!
+                data-selected:text-black!
+                data-active:text-black!
+
+                data-[state=active]:bg-transparent!
+                aria-selected:bg-transparent!
+                data-selected:bg-transparent!
+                data-active:bg-transparent!
+
+                data-[state=active]:shadow-none!
+                aria-selected:shadow-none!
+                data-selected:shadow-none!
+                data-active:shadow-none!
+
+                data-[state=active]:border-b-[#D00515]!
+                data-[state=active]:border-b-4!
+                aria-selected:border-b-[#D00515]!
+                data-selected:border-b-[#D00515]!
+                data-active:border-b-[#D00515]!
+
+                text-lg
+                italic
               "
             >
               {tab.label}
@@ -58,25 +94,18 @@ export default function WebsitesTabs() {
         </TabsList>
 
         {/* Content */}
-        <TabsContent value="frontend" className="mt-8">
-          <TabContent />
-        </TabsContent>
-
-        <TabsContent value="uiux" className="mt-8">
-          <TabContent />
-        </TabsContent>
-
-        <TabsContent value="backend" className="mt-8">
-          <TabContent />
-        </TabsContent>
-
-        <TabsContent value="frameworks" className="mt-8">
-          <TabContent />
-        </TabsContent>
-
-        <TabsContent value="marketing" className="mt-8">
-          <TabContent />
-        </TabsContent>
+        {tabData.map((tab) => (
+          <TabsContent
+            key={tab.value}
+            value={tab.value}
+            className="mt-0 focus:outline-none animate-in fade-in slide-in-from-bottom-4 duration-500"
+          >
+            <DevTapsContent
+              title={`Lorem ipsum dolor sit amet ${tab.label}`}
+              desc="Lorem ipsum dolor sit amet consectetur. Sit id amet amet velit lorem Vestibulum vestibulum malesuada vel feugiat ut ultrices. Lorem ipsum dolor sit amet consectetur. Sit id amet amet velit lorem Vestibulum vestibulum malesuada vel feugiat ut ultrices."
+            />
+          </TabsContent>
+        ))}
       </Tabs>
     </section>
   );

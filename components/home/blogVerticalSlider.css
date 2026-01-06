@@ -8,15 +8,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .vertical-slider-custom .slick-slide .slide-inner {
   transform: scale(1);
   transition: all 0.5s ease;
-  opacity: 0.4;
+  opacity: 0.3;
   /* Ensure width is consistent */
   width: 100%;
   max-width: 800px;
+}
+
+.vertical-slider-custom .slick-center {
+  z-index: 10;
 }
 
 .vertical-slider-custom .slick-center .slide-inner {

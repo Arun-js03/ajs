@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "bun --bun next dev",
+    "dev": "next dev",
     "build": "bun audit && bun --bun next build",
     "start": "bun audit && bun --bun next start -p 3032",
     "lint": "biome check",

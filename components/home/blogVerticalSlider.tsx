@@ -50,7 +50,7 @@ export default function VerticalSlider() {
     centerMode: true,
     centerPadding: "0px",
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     arrows: false,
     className: "vertical-slider-custom",
     focusOnSelect: true,
