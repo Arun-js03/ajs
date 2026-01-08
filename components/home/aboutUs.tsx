@@ -1,6 +1,6 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { imageConfig } from "@/lib/imageConfig";
+import Image from "next/image";
+import Link from "next/link";
 
 const years = [
   { id: 1, value: "13+ Year", title: "of Experience" },
@@ -37,7 +37,24 @@ export default function AboutUs() {
             feugiat ut ultrices. Lacus ut vitae semper egestas enim nisl tempor
             nunc nulla.{" "}
           </p>
-          <Button>Learn More</Button>
+          <Link
+            href="/about"
+            className="inline-flex px-6 py-2 text-sm font-bold text-white gap-3"
+            style={{
+              borderRadius: "10px",
+              border: "1px solid transparent",
+              background:
+                "linear-gradient(#190103, #190103) padding-box, linear-gradient(110.26deg, #FFF5F6 -4.51%, #D00515 100%) border-box",
+            }}
+          >
+            Learn More{" "}
+            <Image
+              src={imageConfig.url("/learnmore-arrow.png")}
+              alt="Arrow Right"
+              width={20}
+              height={20}
+            />
+          </Link>
         </div>
         <div>
           <div>
@@ -49,14 +66,14 @@ export default function AboutUs() {
               className="w-full h-full object-cover rounded-2xl"
             />
           </div>
-          <div className="text-white grid grid-cols-2 items-center gap-8 px-6 justify-center mt-3">
+          <div className="text-white grid grid-cols-2 items-center gap-8 px-8 justify-center mt-3">
             {years.map((year) => (
               <div
                 key={year.id}
-                className="bg-[linear-gradient(180deg,rgba(25,1,3,0.75)_0%,#D00515_100%)] p-4 rounded-2xl justify-center flex flex-col items-center"
+                className="bg-[linear-gradient(180deg,rgba(25,1,3,0.75)_0%,#D00515_100%)] px-4 py-8 rounded-2xl justify-center flex flex-col items-center space-y-2"
               >
-                <h2 className="font-semibold text-2xl ">{year.value}</h2>
-                <h3 className=" text-lg italic">{year.title}</h3>
+                <h2 className="font-semibold text-3xl ">{year.value}</h2>
+                <h3 className="font-semibold text-3xl italic">{year.title}</h3>
               </div>
             ))}
           </div>

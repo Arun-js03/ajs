@@ -7,12 +7,44 @@ const images = [
     id: 1,
     image: "/business.jpg",
     title: "Experience You Can Trust",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   },
-  { id: 2, image: "/datadriven.png", title: "Data-Driven Results" },
-  { id: 3, image: "/futurevision.jpg", title: "Long-Term Partnership" },
-  { id: 4, image: "/experts.jpg", title: "Experts at Every Step" },
-  { id: 5, image: "/hightech.png", title: "A World of Knowledge" },
-  { id: 6, image: "/dynamicdata.jpg", title: "Scalability for Growth" },
+  {
+    id: 2,
+    image: "/datadriven.png",
+    title: "Data-Driven Results",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    id: 3,
+    image: "/futurevision.jpg",
+    title: "Long-Term Partnership",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    id: 4,
+    image: "/experts.jpg",
+    title: "Experts at Every Step",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    id: 5,
+    image: "/hightech.png",
+    title: "A World of Knowledge",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    id: 6,
+    image: "/dynamicdata.jpg",
+    title: "Scalability for Growth",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
 ];
 
 export default function WhyChoose() {
@@ -32,9 +64,9 @@ export default function WhyChoose() {
         {images.map((item, _index) => (
           <div
             key={item.id}
-            className="relative h-150 rounded-md overflow-hidden flex items-end justify-center
-             grow transition-all duration-500 ease-out cursor-default
-             hover:grow-16 focus:grow-2"
+            className="group relative h-150 rounded-2xl overflow-hidden flex items-end justify-center
+             flex-1 transition-all duration-500 ease-out cursor-default
+             hover:flex-3 focus:flex-2"
             style={{
               backgroundImage: `url(${imageConfig.url(item.image)})`,
               backgroundSize: "cover",
@@ -44,8 +76,11 @@ export default function WhyChoose() {
             {/* inset shadow overlay */}
             <div className="absolute inset-0 bg-black/40 shadow-[inset_0_0_80px_rgba(0,0,0,0.7)]" />
 
-            <h3 className="relative z-10 text-white font-semibold text-center px-2 py-4 w-full">
+            <h3 className="relative group-hover:text-2xl z-10 text-white font-semibold text-center px-2 py-4 w-full">
               {item.title}
+              <p className="relative z-10 text-white text-xl font-semibold text-center px-2 py-4 w-full max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-40 group-hover:opacity-100">
+                {item.description}
+              </p>
             </h3>
           </div>
         ))}

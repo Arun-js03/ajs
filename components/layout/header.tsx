@@ -34,22 +34,22 @@ export default function Header() {
       <div className="">
         {/* Left Social Icons */}
         <div className="bg-[#4C3F3C] text-white ">
-          <div className="container mx-auto flex justify-between items-center py-2 text-sm">
+          <div className="container mx-auto flex justify-between items-center py-2 text-base px-9!">
             <div className="flex gap-4 ">
               <Facebook
-                size={16}
+                size={20}
                 className="cursor-pointer hover:text-red-500"
               />
               <Instagram
-                size={16}
+                size={20}
                 className="cursor-pointer hover:text-red-500"
               />
               <Twitter
-                size={16}
+                size={20}
                 className="cursor-pointer hover:text-red-500"
               />
               <Linkedin
-                size={16}
+                size={20}
                 className="cursor-pointer hover:text-red-500"
               />
             </div>
@@ -72,7 +72,7 @@ export default function Header() {
       </div>
 
       {/* ---------- MAIN NAVBAR ---------- */}
-      <div className="absolute top-12 left-0 w-full z-50 ">
+      <div className="absolute top-10 left-0 w-full z-50 ">
         <div className="container flex items-center justify-between py-4 rounded-2xl border-white border">
           <div className="pl-6">
             <Image
@@ -88,16 +88,16 @@ export default function Header() {
                 key={item.path}
                 href={item.path as Route}
                 className={`
-                px-4 py-2 rounded-lg transition
+                px-4 py-1 rounded-lg transition
                 hover:bg-white/20
-                ${pathname === item.path ? "bg-white/10 text-primary" : ""}
+                ${pathname === item.path ? "bg-white/10 text-primary border-white/30 border" : ""}
               `}
               >
                 {item.label}
               </Link>
             ))}
             <div>
-              <Button className="px-4 py-2 rounded-lg transition ">
+              <Button className="px-4 py-2 rounded-xl transition text-base!">
                 Contact Us
               </Button>
             </div>
