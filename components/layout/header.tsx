@@ -128,8 +128,11 @@ export default function Header() {
             ))}
             <div>
               <Link href="/" className="cursor-pointer">
-                <Button className="px-4 py-2 rounded-xl transition text-base! cursor-pointer">
-                  Contact Us
+                <Button className="group relative px-4 py-2 rounded-xl text-base cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-lg">
+                  <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
+                    Contact Us
+                  </span>
+                  <span className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
                 </Button>
               </Link>
             </div>

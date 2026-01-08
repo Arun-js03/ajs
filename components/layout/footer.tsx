@@ -35,10 +35,15 @@ export default function Footer() {
           <div className="flex flex-col  items-end gap-[60px]! justify-between mt-20">
             <Link
               href="tel:+918035694395"
-              className="inline-flex items-center gap-2 text-sm rounded-sm bg-[#D00515] px-6 py-3 font-semibold transition hover:bg-red-700"
+              className="group relative inline-flex items-center gap-2 text-sm rounded-sm bg-[#D00515] px-6 py-3 font-semibold overflow-hidden transition-all duration-300 hover:gap-3 hover:pr-5 hover:shadow-lg"
             >
-              <Phone className="h-5 w-5" />
-              Call Us : +91 8035694395
+              <Phone className="relative z-10 h-5 w-5 transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110" />
+
+              <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
+                Call Us : +91 8035694395
+              </span>
+
+              <span className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
             </Link>
 
             {/* Navigation */}
