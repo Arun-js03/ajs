@@ -27,7 +27,7 @@ export default function OurPortfolio() {
               <div className="flex justify-end">
                 <Link
                   href="#"
-                  className="inline-flex px-6 py-2 text-sm font-bold text-[#190103] gap-3"
+                  className="group inline-flex px-6 py-2 text-sm font-bold text-[#190103] gap-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(208,5,21,0.5)]"
                   style={{
                     background:
                       "linear-gradient(#BCBBB9, #BCBBB9) padding-box, linear-gradient(110.26deg, #190103 -4.51%, #D00515 100%) border-box",
@@ -41,6 +41,7 @@ export default function OurPortfolio() {
                     alt="Arrow Right"
                     width={20}
                     height={20}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
                   />
                 </Link>
               </div>
@@ -90,7 +91,7 @@ export default function OurPortfolio() {
               <div className="flex justify-end">
                 <Link
                   href="#"
-                  className="inline-flex px-6 py-2 text-sm font-bold text-[#190103] gap-3"
+                  className="group inline-flex px-6 py-2 text-sm font-bold text-[#190103] gap-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(208,5,21,0.5)]"
                   style={{
                     background:
                       "linear-gradient(#BCBBB9, #BCBBB9) padding-box, linear-gradient(110.26deg, #190103 -4.51%, #D00515 100%) border-box",
@@ -104,6 +105,7 @@ export default function OurPortfolio() {
                     alt="Arrow Right"
                     width={20}
                     height={20}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
                   />
                 </Link>
               </div>

@@ -46,7 +46,7 @@ export default function AboutUs() {
           </p>
           <Link
             href="/about"
-            className="inline-flex px-6 py-2 text-sm font-bold text-white gap-3"
+            className="group inline-flex px-6 py-2 text-sm font-bold text-white gap-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(208,5,21,0.5)] hover:brightness-110"
             style={{
               borderRadius: "10px",
               border: "1px solid transparent",
@@ -60,6 +60,7 @@ export default function AboutUs() {
               alt="Arrow Right"
               width={20}
               height={20}
+              className="transition-transform duration-300 group-hover:translate-x-1"
             />
           </Link>
         </div>

@@ -89,7 +89,7 @@ export default function ProcessScrollSection() {
                     behavior: "smooth",
                   });
                 }}
-                className="inline-flex px-4 py-2 text-sm font-bold text-[#190103] gap-3"
+                className="group inline-flex px-4 py-2 text-sm font-bold text-[#190103] gap-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(208,5,21,0.5)]"
                 style={{
                   background:
                     "linear-gradient(#fff, #fff) padding-box, linear-gradient(110.26deg, #190103 -4.51%, #D00515 100%) border-box",
@@ -103,6 +103,7 @@ export default function ProcessScrollSection() {
                   alt="Arrow Right"
                   width={20}
                   height={20}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
                 />
               </Link>
             </div>
