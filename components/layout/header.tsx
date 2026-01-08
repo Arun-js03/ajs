@@ -127,9 +127,11 @@ export default function Header() {
               </Link>
             ))}
             <div>
-              <Button className="px-4 py-2 rounded-xl transition text-base!">
-                Contact Us
-              </Button>
+              <Link href="/" className="cursor-pointer">
+                <Button className="px-4 py-2 rounded-xl transition text-base! cursor-pointer">
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

@@ -14,6 +14,7 @@ export default function ProcessScrollSection() {
   });
 
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-66.6%"]);
+  const pulseLeft = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   const processList = [
     {
@@ -142,12 +143,17 @@ export default function ProcessScrollSection() {
                     </div>
                   </div>
                 </div>
-                <p className="mt-4 text-black">{item.describe}</p>
+                <p className="mt-4 text-black! font-medium!">{item.describe}</p>
               </div>
             ))}
           </motion.div>
           <div className="relative z-999 mx-auto container">
-            <div className="border-b-[#D00515] -translate-y-45 border-b-4"></div>
+            <div className="relative border-b-[#D00515] -translate-y-45 border-b-4">
+              <motion.div
+                style={{ left: pulseLeft }}
+                className="absolute -top-[8px] h-5 w-5 -translate-x-1/2 rounded-full bg-[#D00515] shadow-[0_0_12px_3px_#D00515]"
+              />
+            </div>
           </div>
         </div>
       </div>

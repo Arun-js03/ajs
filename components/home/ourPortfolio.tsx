@@ -13,10 +13,10 @@ export default function OurPortfolio() {
         </div>
 
         <div className="grid grid-cols-3 gap-8 mt-4">
-          <div className="flex justify-between bg-[#BCBBB9] col-span-2 rounded-2xl">
+          <div className="flex justify-between bg-[#D1D6D0] col-span-2 rounded-2xl">
             <div>
               <Image
-                src={imageConfig.url("/portfolioOne.png")}
+                src={imageConfig.url("/portfolio.png")}
                 alt="Portfolio"
                 width={500}
                 height={500}
@@ -76,7 +76,7 @@ export default function OurPortfolio() {
               className="rounded-2xl"
             />
           </div>
-          <div className="flex justify-between bg-[#BCBBB9] col-span-2 rounded-2xl">
+          <div className="flex justify-between bg-[#D1D6D0] col-span-2 rounded-2xl">
             <div>
               <Image
                 src={imageConfig.url("/portfoliofour.png")}
