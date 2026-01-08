@@ -14,6 +14,7 @@ import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import AnimatedSocialIcon from "@/components/ui/animated-social-icon";
 import { Button } from "@/components/ui/button";
 import { imageConfig } from "@/lib/imageConfig";
 export default function Header() {
@@ -36,30 +37,30 @@ export default function Header() {
         <div className="bg-[#4C3F3C] text-white ">
           <div className="container mx-auto flex justify-between items-center py-2 text-base px-9!">
             <div className="flex gap-4 ">
-              <Link href="https://www.facebook.com/zinavopvtltd/">
+              <AnimatedSocialIcon href="https://www.facebook.com/zinavopvtltd/">
                 <Facebook
                   size={20}
                   className="cursor-pointer hover:text-red-500"
                 />
-              </Link>
-              <Link href="https://www.instagram.com/zinavopvtltd/">
+              </AnimatedSocialIcon>
+              <AnimatedSocialIcon href="https://www.instagram.com/zinavopvtltd/">
                 <Instagram
                   size={20}
                   className="cursor-pointer hover:text-red-500"
                 />
-              </Link>
-              <Link href="https://x.com/Zinavogroup">
+              </AnimatedSocialIcon>
+              <AnimatedSocialIcon href="https://x.com/Zinavogroup">
                 <Twitter
                   size={20}
                   className="cursor-pointer hover:text-red-500"
                 />
-              </Link>
-              <Link href="https://www.linkedin.com/company/zinavo/mycompany/">
+              </AnimatedSocialIcon>
+              <AnimatedSocialIcon href="https://www.linkedin.com/company/zinavo/mycompany/">
                 <Linkedin
                   size={20}
                   className="cursor-pointer hover:text-red-500"
                 />
-              </Link>
+              </AnimatedSocialIcon>
             </div>
             {/* Right Side Info */}
             <div className="flex gap-6 items-center">

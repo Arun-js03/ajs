@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import AnimatedSocialIcon from "@/components/ui/animated-social-icon";
 import { imageConfig } from "@/lib/imageConfig";
 export default function Footer() {
   return (
@@ -84,34 +85,18 @@ export default function Footer() {
             </p>
 
             <div className="flex gap-4">
-              <Link
-                href="https://www.facebook.com/zinavopvtltd/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <AnimatedSocialIcon href="https://www.facebook.com/zinavopvtltd/">
                 <Facebook className="h-7 w-7 cursor-pointer hover:text-red-500" />
-              </Link>
-              <Link
-                href="https://www.instagram.com/zinavopvtltd/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              </AnimatedSocialIcon>
+              <AnimatedSocialIcon href="https://www.instagram.com/zinavopvtltd/">
                 <Instagram className="h-7 w-7 cursor-pointer hover:text-red-500" />
-              </Link>
-              <Link
-                href="https://x.com/Zinavogroup"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              </AnimatedSocialIcon>
+              <AnimatedSocialIcon href="https://x.com/Zinavogroup">
                 <Twitter className="h-7 w-7 cursor-pointer hover:text-red-500" />
-              </Link>
-              <Link
-                href="https://www.linkedin.com/company/zinavo/mycompany/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              </AnimatedSocialIcon>
+              <AnimatedSocialIcon href="https://www.linkedin.com/company/zinavo/mycompany/">
                 <Linkedin className="h-7 w-7 cursor-pointer hover:text-red-500" />
-              </Link>
+              </AnimatedSocialIcon>
             </div>
           </div>
 
