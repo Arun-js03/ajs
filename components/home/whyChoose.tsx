@@ -49,9 +49,9 @@ const images = [
 
 export default function WhyChoose() {
   return (
-    <div className="container mx-auto py-10 space-y-6">
+    <div className="container mx-auto py-10 space-y-6 mt-14" id="whychoose">
       <div className="space-y-1 text-center md:text-left">
-        <h3 className="italic text-2xl font-semibold">
+        <h3 className="italic text-2xl font-semibold space-y-3">
           Why Should You Choose Us?
         </h3>
         <h2 className="font-bold text-3xl">
@@ -60,7 +60,7 @@ export default function WhyChoose() {
       </div>
 
       {/* Hover effect container */}
-      <div className="flex gap-4 overflow-hidden">
+      <div className="flex gap-4 overflow-hidden pt-4">
         {images.map((item, _index) => (
           <div
             key={item.id}

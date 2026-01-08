@@ -14,13 +14,13 @@ const slides = [
   },
   {
     id: 2,
-    image: "seriviceslider.jpg",
+    image: "coderimg.jpg",
     title: "Digital Solutions",
     description: "Innovative technology",
   },
   {
     id: 3,
-    image: "seriviceslider.jpg",
+    image: "futurism.jpg",
     title: "Code Architecture",
     description: "Scalable systems",
   },
@@ -122,7 +122,7 @@ const ServicesSlider = () => {
         className="absolute inset-0 w-full h-full object-cover"
       />
       {/* Header */}
-      <div className="relative z-10 space-y-1 text-center">
+      <div className="relative z-10 space-y-3 text-center">
         <h3 className="italic font-semibold text-2xl text-white">
           Our Services
         </h3>

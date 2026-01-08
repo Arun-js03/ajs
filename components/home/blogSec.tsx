@@ -44,7 +44,13 @@ export default function BlogSec() {
             {/* First column: span 2 */}
             <div className="col-span-2 space-y-12 pl-4">
               <Link
-                href="/about"
+                href="#testimonials"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("testimonials")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
                 className="inline-flex px-4 py-1 text-sm font-bold text-white gap-3 items-center"
                 style={{
                   borderRadius: "10px",

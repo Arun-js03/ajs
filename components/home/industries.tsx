@@ -119,7 +119,7 @@ const industries = [
 export default function Industries() {
   return (
     <div className="container space-y-4 space">
-      <div className="text-center">
+      <div className="text-center space-y-3">
         <h3 className="italic font-bold text-2xl">Industries Empower</h3>
         <h2 className="font-bold text-3xl">
           Industries Empowered by Our Website Designing Companys

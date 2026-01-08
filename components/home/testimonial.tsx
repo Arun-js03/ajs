@@ -66,8 +66,8 @@ const testimonials = [
 
 export default function Testimonial() {
   return (
-    <section className="bg-[#FFFAFA] py-5">
-      <div className="text-center">
+    <section className="bg-[#FFFAFA] py-5" id="testimonials">
+      <div className="text-center space-y-3">
         <h3 className="italic font-bold text-2xl">Testimonial</h3>
         <h2 className="font-bold text-3xl">
           Review of Website Development Services

@@ -71,7 +71,7 @@ export default function ProcessScrollSection() {
             className="container mx-auto mb-10 flex items-center justify-between"
             id="dev-process"
           >
-            <div className="text-center lg:text-left">
+            <div className="text-center lg:text-left space-y-3">
               <h3 className="text-2xl font-bold italic text-black">
                 Experience a Seamless Website Development Process
               </h3>
@@ -81,7 +81,13 @@ export default function ProcessScrollSection() {
             </div>
             <div>
               <Link
-                href="#"
+                href="/#webDevProcess"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("webDevProcess")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
                 className="inline-flex px-4 py-2 text-sm font-bold text-[#190103] gap-3"
                 style={{
                   background:

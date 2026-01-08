@@ -27,7 +27,7 @@ export default function FaqSec() {
         className="object-cover absolute w-full h-full -z-10"
       />
       {/* Header */}
-      <div className="relative z-10 text-center text-white space-y-2">
+      <div className="relative z-10 text-center text-white space-y-3">
         <h3 className="italic font-bold text-2xl">FAQ</h3>
         <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
       </div>

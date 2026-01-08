@@ -55,11 +55,15 @@ export default function WebsitesTabs() {
   });
 
   return (
-    <section ref={containerRef} className="relative h-[300vh]">
+    <section
+      ref={containerRef}
+      className="relative h-[300vh]"
+      id="webDevProcess"
+    >
       <div className="sticky top-0 h-screen flex flex-col justify-center bg-white overflow-hidden">
         <div className="w-full py-12 px-3">
           <div className="flex items-center justify-between container mb-10 ">
-            <div className="text-center lg:text-left ">
+            <div className="text-center lg:text-left space-y-3">
               <h3 className="italic font-bold text-2xl text-black">
                 Experience a Seamless Website Development Process
               </h3>
@@ -69,7 +73,13 @@ export default function WebsitesTabs() {
             </div>
             <div>
               <Link
-                href="#"
+                href="#whychoose"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("whychoose")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
                 className="inline-flex px-4 py-2 text-sm font-bold text-[#190103] gap-3"
                 style={{
                   background:
