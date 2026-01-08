@@ -1,12 +1,14 @@
 "use client";
 
 import { Plus } from "lucide-react";
+import Image from "next/image";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { imageConfig } from "@/lib/imageConfig";
 
 const faqs = Array.from({ length: 10 }).map((_, i) => ({
   id: i.toString(),
@@ -17,15 +19,21 @@ const faqs = Array.from({ length: 10 }).map((_, i) => ({
 
 export default function FaqSec() {
   return (
-    <div className="bg-[#260205] py-6 mb-12 rounded-2xl">
+    <div className=" relative py-6 mb-12 rounded-2xl overflow-hidden">
+      <Image
+        src={imageConfig.url("/faq-banner.png")}
+        alt="FAQ"
+        fill
+        className="object-cover absolute w-full h-full -z-10"
+      />
       {/* Header */}
-      <div className="text-center text-white space-y-2">
+      <div className="relative z-10 text-center text-white space-y-2">
         <h3 className="italic font-bold text-2xl">FAQ</h3>
         <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
       </div>
 
       {/* Content */}
-      <section className=" p-10">
+      <section className="relative z-10 p-10">
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2">
           {[0, 1].map((col) => (
             <Accordion key={col} className="space-y-6 border-0">

@@ -1,6 +1,6 @@
-import { imageConfig } from "@/lib/imageConfig";
 import Image from "next/image";
 import Link from "next/link";
+import { imageConfig } from "@/lib/imageConfig";
 
 const years = [
   { id: 1, value: "13+ Year", title: "of Experience" },
@@ -8,8 +8,15 @@ const years = [
 ];
 export default function AboutUs() {
   return (
-    <div className="bg-[#190103] space">
-      <div className="container grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+    <div className="space-top relative">
+      <Image
+        src={imageConfig.url("/about-banner.png")}
+        alt="About Us"
+        width={1200}
+        height={500}
+        className="w-full h-full object-cover rounded-2xl"
+      />
+      <div className="container grid grid-cols-1 md:grid-cols-2 items-center gap-8 absolute z-10 top-0 left-0 right-0 h-full">
         <div className="space-y-4  text-white">
           <h4 className="font-semibold italic text-2xl">About Us</h4>
 

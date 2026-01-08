@@ -127,7 +127,7 @@ function TestimonialCard({ text }: { text: string }) {
       {/* CONTENT */}
       <div className="relative z-10 flex flex-col h-full top-6">
         <Image
-          src={imageConfig.url("/quoma.png")}
+          src={imageConfig.url("/gamanxt.png")}
           alt="Quote"
           width={60}
           height={60}

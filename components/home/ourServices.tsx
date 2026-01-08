@@ -5,45 +5,48 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { imageConfig } from "@/lib/imageConfig";
 
-const ServicesSlider = () => {
-  const [activeIndex, setActiveIndex] = useState(1);
+const slides = [
+  {
+    id: 1,
+    image: "seriviceslider.jpg",
+    title: "Web Development",
+    description: "Custom web solutions",
+  },
+  {
+    id: 2,
+    image: "seriviceslider.jpg",
+    title: "Digital Solutions",
+    description: "Innovative technology",
+  },
+  {
+    id: 3,
+    image: "seriviceslider.jpg",
+    title: "Code Architecture",
+    description: "Scalable systems",
+  },
+  {
+    id: 4,
+    image: "seriviceslider.jpg",
+    title: "Mobile Apps",
+    description: "Cross-platform development",
+  },
+  {
+    id: 5,
+    image: "seriviceslider.jpg",
+    title: "Cloud Solutions",
+    description: "Scalable infrastructure",
+  },
+];
 
-  const slides = [
-    {
-      id: 1,
-      image: "seriviceslider.jpg",
-      title: "Web Development",
-      description: "Custom web solutions",
-    },
-    {
-      id: 2,
-      image: "seriviceslider.jpg",
-      title: "Digital Solutions",
-      description: "Innovative technology",
-    },
-    {
-      id: 3,
-      image: "seriviceslider.jpg",
-      title: "Code Architecture",
-      description: "Scalable systems",
-    },
-    {
-      id: 4,
-      image: "seriviceslider.jpg",
-      title: "Mobile Apps",
-      description: "Cross-platform development",
-    },
-    {
-      id: 5,
-      image: "seriviceslider.jpg",
-      title: "Cloud Solutions",
-      description: "Scalable infrastructure",
-    },
-  ];
+// Helper to handle modulo with negative numbers correctly
+const mod = (n: number, m: number) => ((n % m) + m) % m;
+
+const ServicesSlider = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % slides.length);
+      setActiveIndex((prev) => prev + 1);
     }, 3000);
 
     return () => clearInterval(interval);
@@ -51,7 +54,8 @@ const ServicesSlider = () => {
 
   const getSlideStyles = (index: number) => {
     const totalSlides = slides.length;
-    let diff = index - activeIndex;
+    const activeMod = mod(activeIndex, totalSlides);
+    let diff = index - activeMod;
 
     // Handle wrapping for full 360 rotation
     if (diff > totalSlides / 2) diff -= totalSlides;
@@ -95,6 +99,18 @@ const ServicesSlider = () => {
       filter: "brightness(0)",
     };
   };
+
+  const handleSlideClick = (index: number) => {
+    const totalSlides = slides.length;
+    const currentMod = mod(activeIndex, totalSlides);
+    let diff = index - currentMod;
+
+    if (diff > totalSlides / 2) diff -= totalSlides;
+    if (diff < -totalSlides / 2) diff += totalSlides;
+
+    setActiveIndex((prev) => prev + diff);
+  };
+
   const size = 60;
   return (
     <div className="relative py-10 flex flex-col items-center justify-center overflow-hidden">
@@ -140,7 +156,7 @@ const ServicesSlider = () => {
                   filter: styles.filter,
                   transformStyle: "preserve-3d",
                 }}
-                onClick={() => setActiveIndex(index)}
+                onClick={() => handleSlideClick(index)}
               >
                 <div
                   className="relative w-full h-full overflow-hidden shadow-2xl border border-white/10"
@@ -196,18 +212,15 @@ const ServicesSlider = () => {
             rotate: -activeIndex * (360 / slides.length),
           }}
           transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 20,
-            mass: 1,
-            ease: "easeInOut",
             duration: 0.8,
+            ease: "easeInOut",
           }}
         >
           {slides.map((slide, index) => {
             const angle = (360 / slides.length) * index;
             // Radius for text position
             const radius = 180;
+            const activeMod = mod(activeIndex, slides.length);
 
             return (
               <div
@@ -241,9 +254,9 @@ const ServicesSlider = () => {
                       startOffset="25%"
                       className={`transition-opacity duration-500 fill-white`}
                       style={{
-                        opacity: index === activeIndex ? 1 : 0.6,
+                        opacity: index === activeMod ? 1 : 0.6,
                         filter:
-                          index === activeIndex
+                          index === activeMod
                             ? "brightness(100%)"
                             : "brightness(60%)",
                       }}

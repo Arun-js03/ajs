@@ -1,8 +1,10 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import DevTapsContent from "@/components/home/devTaps";
-import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { imageConfig } from "@/lib/imageConfig";
 
 const tabData = [
   {
@@ -45,9 +47,24 @@ export default function WebsitesTabs() {
           </h2>
         </div>
         <div>
-          <Button variant={"outline"} className="rounded-2xl! text-lg!">
+          <Link
+            href="#"
+            className="inline-flex px-4 py-2 text-sm font-bold text-[#190103] gap-3"
+            style={{
+              background:
+                "linear-gradient(#fff, #fff) padding-box, linear-gradient(110.26deg, #190103 -4.51%, #D00515 100%) border-box",
+              borderRadius: "10px",
+              border: "1px solid transparent",
+            }}
+          >
             Next
-          </Button>
+            <Image
+              src={imageConfig.url("/downarrow.png")}
+              alt="Arrow Right"
+              width={20}
+              height={20}
+            />
+          </Link>
         </div>
       </div>
 

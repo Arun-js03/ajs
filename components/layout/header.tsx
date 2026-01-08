@@ -36,35 +36,61 @@ export default function Header() {
         <div className="bg-[#4C3F3C] text-white ">
           <div className="container mx-auto flex justify-between items-center py-2 text-base px-9!">
             <div className="flex gap-4 ">
-              <Facebook
-                size={20}
-                className="cursor-pointer hover:text-red-500"
-              />
-              <Instagram
-                size={20}
-                className="cursor-pointer hover:text-red-500"
-              />
-              <Twitter
-                size={20}
-                className="cursor-pointer hover:text-red-500"
-              />
-              <Linkedin
-                size={20}
-                className="cursor-pointer hover:text-red-500"
-              />
+              <Link href="https://www.facebook.com/zinavopvtltd/">
+                <Facebook
+                  size={20}
+                  className="cursor-pointer hover:text-red-500"
+                />
+              </Link>
+              <Link href="https://www.instagram.com/zinavopvtltd/">
+                <Instagram
+                  size={20}
+                  className="cursor-pointer hover:text-red-500"
+                />
+              </Link>
+              <Link href="https://x.com/Zinavogroup">
+                <Twitter
+                  size={20}
+                  className="cursor-pointer hover:text-red-500"
+                />
+              </Link>
+              <Link href="https://www.linkedin.com/company/zinavo/mycompany/">
+                <Linkedin
+                  size={20}
+                  className="cursor-pointer hover:text-red-500"
+                />
+              </Link>
             </div>
             {/* Right Side Info */}
             <div className="flex gap-6 items-center">
-              <div className="flex items-center gap-1">
-                <Mail size={14} /> info@gmail.com
+              <div className=" cursor-pointer">
+                <Link
+                  href="mailto:info@zinavo.com"
+                  className="flex items-center gap-1"
+                >
+                  <Mail size={18} /> info@zinavo.com
+                </Link>
               </div>
 
               <div className="flex items-center gap-1">
-                <Phone size={14} /> +91 9578707929
+                <Link
+                  href="tel:+918035694395"
+                  className="flex items-center gap-1"
+                >
+                  <Phone size={18} />
+                  +91 8035694395
+                </Link>
               </div>
 
               <div className="flex items-center gap-1">
-                <HugeiconsIcon icon={WhatsappIcon} size={14} /> +91 9578707929
+                <Link
+                  href="https://wa.me/917760245945"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1"
+                >
+                  <HugeiconsIcon icon={WhatsappIcon} size={18} /> +91 7760245945
+                </Link>
               </div>
             </div>
           </div>
@@ -90,7 +116,11 @@ export default function Header() {
                 className={`
                 px-4 py-1 rounded-lg transition
                 hover:bg-white/20
-                ${pathname === item.path ? "bg-white/10 text-primary border-white/30 border" : ""}
+                ${
+                  pathname === item.path
+                    ? "bg-white/10 text-primary border-white/30 border"
+                    : ""
+                }
               `}
               >
                 {item.label}

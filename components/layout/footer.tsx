@@ -34,11 +34,11 @@ export default function Footer() {
           {/* Call Button */}
           <div className="flex flex-col  items-end gap-[60px]! justify-between mt-20">
             <Link
-              href="tel:+919578707920"
+              href="tel:+918035694395"
               className="inline-flex items-center gap-2 text-sm rounded-sm bg-[#D00515] px-6 py-3 font-semibold transition hover:bg-red-700"
             >
               <Phone className="h-5 w-5" />
-              Call Us : +91 9578707920
+              Call Us : +91 8035694395
             </Link>
 
             {/* Navigation */}
@@ -79,10 +79,34 @@ export default function Footer() {
             </p>
 
             <div className="flex gap-4">
-              <Facebook className="h-7 w-7 cursor-pointer hover:text-red-500" />
-              <Instagram className="h-7 w-7 cursor-pointer hover:text-red-500" />
-              <Twitter className="h-7 w-7 cursor-pointer hover:text-red-500" />
-              <Linkedin className="h-7 w-7 cursor-pointer hover:text-red-500" />
+              <Link
+                href="https://www.facebook.com/zinavopvtltd/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Facebook className="h-7 w-7 cursor-pointer hover:text-red-500" />
+              </Link>
+              <Link
+                href="https://www.instagram.com/zinavopvtltd/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Instagram className="h-7 w-7 cursor-pointer hover:text-red-500" />
+              </Link>
+              <Link
+                href="https://x.com/Zinavogroup"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Twitter className="h-7 w-7 cursor-pointer hover:text-red-500" />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/company/zinavo/mycompany/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin className="h-7 w-7 cursor-pointer hover:text-red-500" />
+              </Link>
             </div>
           </div>
 
