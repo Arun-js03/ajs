@@ -1,6 +1,6 @@
 "use client";
 
-import { useMotionValueEvent, useScroll } from "framer-motion";
+import { useMotionValueEvent, useScroll, useSpring } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
@@ -17,11 +17,17 @@ export default function BlogSec() {
     offset: ["start start", "end end"],
   });
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  useMotionValueEvent(smoothProgress, "change", (latest: number) => {
     // Map 0-1 to 0-(slides.length-1)
     const index = Math.min(
       Math.floor(latest * slides.length),
-      slides.length - 1,
+      slides.length - 1
     );
     setActiveIndex(index);
   });
