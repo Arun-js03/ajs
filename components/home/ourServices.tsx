@@ -116,19 +116,19 @@ const ServicesSlider = () => {
     <div className="relative py-10 flex flex-col items-center justify-center overflow-hidden">
       <Image
         src={imageConfig.url("/service-banner.png")}
-        alt="ourServiceBanner"
+        alt="Zinavo Services Background"
         width={100}
         height={100}
         className="absolute inset-0 w-full h-full object-cover"
       />
       {/* Header */}
       <div className="relative z-10 space-y-3 text-center">
-        <h3 className="italic font-semibold text-2xl text-white">
+        <h2 className="italic font-semibold text-2xl text-white">
           Our Services
-        </h3>
-        <h2 className="font-bold text-3xl text-white">
-          Lorem ipsum dolor sit amet consectetur
         </h2>
+        <h3 className="font-bold text-3xl text-white">
+          Comprehensive Digital Solutions
+        </h3>
       </div>
 
       {/* Slider Container with 3D Perspective */}

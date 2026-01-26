@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import AboutUs from "@/components/home/aboutUs";
 import Banner from "@/components/home/banner";
 import BlogSec from "@/components/home/blogSec";
@@ -10,6 +11,12 @@ import ServicesSlider from "@/components/home/ourServices";
 import Testimonial from "@/components/home/testimonial";
 import WebsitesTabs from "@/components/home/webDevProcess";
 import WhyChoose from "@/components/home/whyChoose";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description:
+    "Welcome to Zinavo - Your partner for high-quality web design, development, and SEO services in Bangalore, India.",
+};
 
 export default function Page() {
   return (

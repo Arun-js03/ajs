@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
 
   basePath: "/zinavo",
   assetPrefix: "/zinavo/",
+
+  images: {
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 60,
+  },
 };
 
 export default nextConfig;

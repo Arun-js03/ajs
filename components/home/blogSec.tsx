@@ -39,7 +39,7 @@ export default function BlogSec() {
       <div className="sticky top-0 overflow-hidden flex flex-col justify-center">
         <Image
           src={imageConfig.url("/blog-banner.png")}
-          alt="Blog"
+          alt="Zinavo Blog Background"
           fill
           className="object-cover -z-10"
         />
@@ -73,10 +73,8 @@ export default function BlogSec() {
                 />
               </Link>
               <div className="space-y-6">
-                <h3 className="italic font-bold text-2xl">Blog</h3>
-                <h2 className="text-3xl font-bold">
-                  Lorem ipsum dolor sit amet consectetur
-                </h2>
+                <h2 className="italic font-bold text-2xl">Blog</h2>
+                <h3 className="text-3xl font-bold">Latest Insights & News</h3>
                 <p>
                   Lorem ipsum dolor sit amet consectetur. Sit id amet amet velit
                   lorem neque tincidunt mi tortor. Vestibulum vestibulum

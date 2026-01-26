@@ -22,11 +22,9 @@ export default function Header() {
 
   const menu = [
     { label: "Home", path: "/" },
-    { label: "About Us", path: "/about" },
+    { label: "About Us", path: "/about-us" },
     { label: "Our Services", path: "/services" },
     { label: "Portfolio", path: "/portfolio" },
-    { label: "Clients", path: "/clients" },
-    { label: "Plugin", path: "/plugin" },
     { label: "Blog", path: "/blog" },
   ];
   return (
@@ -65,33 +63,41 @@ export default function Header() {
             {/* Right Side Info */}
             <div className="flex gap-6 items-center">
               <div className=" cursor-pointer">
-                <Link
-                  href="mailto:info@zinavo.com"
-                  className="flex items-center gap-1"
-                >
-                  <Mail size={18} /> info@zinavo.com
-                </Link>
+                <AnimatedSocialIcon href="mailto:info@zinavo.com">
+                  <Link
+                    href="mailto:info@zinavo.com"
+                    className="flex items-center gap-1"
+                  >
+                    <Mail size={18} /> info@zinavo.com
+                  </Link>
+                </AnimatedSocialIcon>
               </div>
 
               <div className="flex items-center gap-1">
-                <Link
-                  href="tel:+918035694395"
-                  className="flex items-center gap-1"
-                >
-                  <Phone size={18} />
-                  +91 8035694395
-                </Link>
+                <AnimatedSocialIcon href="tel:+918035694395">
+                  <Link
+                    href="tel:+918035694395"
+                    className="flex items-center gap-1"
+                  >
+                    <Phone size={18} />
+                    +91 8035694395
+                  </Link>
+                </AnimatedSocialIcon>
               </div>
 
               <div className="flex items-center gap-1">
-                <Link
-                  href="https://wa.me/917760245945"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1"
-                >
-                  <HugeiconsIcon icon={WhatsappIcon} size={18} /> +91 7760245945
-                </Link>
+                <AnimatedSocialIcon href="https://wa.me/917760245945">
+                  {" "}
+                  <Link
+                    href="https://wa.me/917760245945"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1"
+                  >
+                    <HugeiconsIcon icon={WhatsappIcon} size={18} /> +91
+                    7760245945
+                  </Link>
+                </AnimatedSocialIcon>
               </div>
             </div>
           </div>
@@ -106,7 +112,7 @@ export default function Header() {
               src={imageConfig.url("/logo.png")}
               width={200}
               height={200}
-              alt="Logo"
+              alt="Zinavo - Web Design & Development Company Logo"
             />
           </div>
           <div className="flex gap-6 pr-6 items-center font-medium">
@@ -128,7 +134,7 @@ export default function Header() {
               </Link>
             ))}
             <div>
-              <Link href="/" className="cursor-pointer">
+              <Link href={"/contact-us" as Route} className="cursor-pointer">
                 <Button className="group relative px-4 py-2 rounded-xl text-base cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-lg">
                   <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
                     Contact Us

@@ -48,7 +48,7 @@ export default function LogoSlider({ direction = "left", speed = 25 }: Props) {
                 src={imageConfig.url(logo.src)}
                 width={120}
                 height={120}
-                alt="brand"
+                alt={`${logo.src.replace("/", "").replace("logo", "").replace(".png", "")} brand logo`}
                 className="max-h-full w-auto object-contain transition duration-300"
               />
             </div>

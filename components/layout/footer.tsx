@@ -6,6 +6,7 @@ import {
   Star,
   Twitter,
 } from "lucide-react";
+import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import AnimatedSocialIcon from "@/components/ui/animated-social-icon";
@@ -23,7 +24,7 @@ export default function Footer() {
               4.9/5 Average Star Rating
             </div>
 
-            <h2 className="mb-4 text-4xl font-bold">Client Base</h2>
+            <h3 className="mb-4 text-4xl font-bold">Client Base</h3>
 
             <p className="text-sm leading-relaxed text-white">
               India, US, Canada, Germany, UK, France, Italy, Spain, Ukraine,
@@ -50,12 +51,40 @@ export default function Footer() {
             {/* Navigation */}
             <div>
               <ul className="space-y-3 text-md text-white flex gap-15 text-bold">
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Services</li>
-                <li>Blog</li>
-                <li>Team</li>
-                <li>Reviews</li>
+                <li>
+                  <Link href="/" className="hover:text-red-500 transition">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href={"/about-us" as Route}
+                    className="hover:text-red-500 transition"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services"
+                    className="hover:text-red-500 transition"
+                  >
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" className="hover:text-red-500 transition">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/portfolio"
+                    className="hover:text-red-500 transition"
+                  >
+                    Portfolio
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -72,7 +101,7 @@ export default function Footer() {
           <div className="col-span-2">
             <Image
               src={imageConfig.url("/yourlogo.png")}
-              alt="Logo"
+              alt="Zinavo - Professional Web Solutions"
               width={250}
               height={250}
               className="mb-6 inline-block rounded-lg bg-white"
@@ -135,11 +164,26 @@ export default function Footer() {
             website designed by <Link href="https://zinavo.com">zinavo</Link>
           </p>
           <div className="flex gap-4">
-            <span>Terms and conditional</span>
+            <Link
+              href={"/terms" as Route}
+              className="hover:text-red-500 transition"
+            >
+              Terms and conditional
+            </Link>
             <span>|</span>
-            <span>Privacy policy</span>
+            <Link
+              href={"/privacy" as Route}
+              className="hover:text-red-500 transition"
+            >
+              Privacy policy
+            </Link>
             <span>|</span>
-            <span>Cookies</span>
+            <Link
+              href={"/cookies" as Route}
+              className="hover:text-red-500 transition"
+            >
+              Cookies
+            </Link>
           </div>
         </div>
       </div>
