@@ -116,7 +116,7 @@ export default function WebsitesTabs() {
                   <h2 className="font-bold text-2xl md:text-3xl text-black">
                     Lorem ipsum dolor sit amet consectetur
                   </h2>
-                  <h2 className="font-bold text-lg md:text-3xl text-black md:hidden">
+                  <h2 className="font-bold text-lg md:text-3xl text-primary md:hidden">
                     {tabData.find((t) => t.value === activeTab)?.label}
                   </h2>
                 </div>
