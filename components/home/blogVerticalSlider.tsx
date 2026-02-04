@@ -69,8 +69,8 @@ export default function VerticalSlider({ activeIndex }: VerticalSliderProps) {
                 </div>
 
                 {/* Content Section */}
-                <div className="flex flex-col gap-3 flex-1">
-                  <h3 className="text-2xl font-bold leading-tight text-white mb-1">
+                <div className="flex flex-col gap-3 lg:gap-1 xl:gap-3 flex-1">
+                  <h3 className="text-xl md:text-2xl lg:text-xl xl:text-2xl font-bold leading-tight text-white mb-1">
                     {slide.title}
                   </h3>
 

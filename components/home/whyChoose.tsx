@@ -49,24 +49,27 @@ const images = [
 
 export default function WhyChoose() {
   return (
-    <div className="container mx-auto py-10 space-y-6 mt-14" id="whychoose">
+    <div
+      className="container mx-auto xl:py-10 pb-10 xl:pb-0 space-y-6 md:mt-14"
+      id="whychoose"
+    >
       <div className="space-y-1 text-center md:text-left">
-        <h3 className="italic text-2xl font-semibold space-y-3">
+        <h3 className="italic text-xl md:text-2xl font-semibold space-y-3">
           Why Should You Choose Us?
         </h3>
-        <h2 className="font-bold text-3xl">
+        <h2 className="font-bold text-2xl md:text-3xl">
           Lorem ipsum dolor sit amet consectetur
         </h2>
       </div>
 
       {/* Hover effect container */}
-      <div className="flex gap-4 overflow-hidden pt-4">
+      <div className="md:flex gap-4 overflow-hidden pt-4">
         {images.map((item, _index) => (
           <div
             key={item.id}
-            className="group relative h-150 rounded-2xl overflow-hidden flex items-end justify-center
+            className="group relative md:h-150 h-70 rounded-2xl overflow-hidden flex items-end justify-center
              flex-1 transition-all duration-500 ease-out cursor-default
-             hover:flex-3 focus:flex-2"
+             hover:flex-3 focus:flex-2 mb-4 md:mb-0"
             style={{
               backgroundImage: `url(${imageConfig.url(item.image)})`,
               backgroundSize: "cover",

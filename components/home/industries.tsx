@@ -120,17 +120,19 @@ export default function Industries() {
   return (
     <div className="container space-y-4 space">
       <div className="text-center space-y-3">
-        <h3 className="italic font-bold text-2xl">Industries Empower</h3>
-        <h2 className="font-bold text-3xl">
+        <h3 className="italic font-bold md:text-2xl text-xl">
+          Industries Empower
+        </h3>
+        <h2 className="font-bold md:text-3xl text-2xl">
           Industries Empowered by Our Website Designing Companys
         </h2>
       </div>
-      <div className="grid grid-cols-4 rounded-2xl gap-8 mt-10 group">
+      <div className="md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 rounded-2xl gap-8 mt-10 group ">
         {industries.map((industry) => (
           <div
             key={industry.id}
             style={{ backgroundColor: industry.bg }}
-            className="relative overflow-hidden group/card flex items-center rounded-lg px-2 py-5 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-102 gap-4"
+            className="relative overflow-hidden group/card flex items-center rounded-lg px-2 py-5 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-102 gap-4 mb-4 md:mb-0"
           >
             <div className="absolute inset-0 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 z-0">
               <Image
@@ -145,9 +147,9 @@ export default function Industries() {
               alt="industries Icon"
               width={80}
               height={80}
-              className="relative z-10"
+              className="relative z-10 md:w-15 md:h-15 w-10 h-10 lg:w-20 lg:h-20"
             />
-            <h3 className="ml-2 text-white text-[26px] italic font-bold relative z-10">
+            <h3 className="ml-2 text-white md:text-[26px] text-xl italic font-bold relative z-10">
               {industry.description}
             </h3>
           </div>

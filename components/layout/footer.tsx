@@ -15,8 +15,8 @@ export default function Footer() {
   return (
     <footer className="bg-[#190103] text-white">
       {/* Top Section */}
-      <div className="pt-4 pb-2 container">
-        <div className="flex flex-col gap-10 lg:flex-row lg:justify-between">
+      <div className="pt-10 pb-6 container">
+        <div className="flex flex-col md:gap-10 lg:flex-row lg:justify-between">
           {/* Left */}
           <div className="max-w-xl">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black">
@@ -24,7 +24,7 @@ export default function Footer() {
               4.9/5 Average Star Rating
             </div>
 
-            <h3 className="mb-4 text-4xl font-bold">Client Base</h3>
+            <h3 className="mb-4 text-2xl md:text-4xl font-bold">Client Base</h3>
 
             <p className="text-sm leading-relaxed text-white">
               India, US, Canada, Germany, UK, France, Italy, Spain, Ukraine,
@@ -33,11 +33,11 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Call Button */}
-          <div className="flex flex-col  items-end gap-[60px]! justify-between mt-20">
+          {/* Call Button & Navigation */}
+          <div className="flex flex-col items-center lg:items-end gap-8 lg:gap-[60px]! justify-between mt-8 lg:mt-20">
             <Link
               href="tel:+918035694395"
-              className="group relative inline-flex items-center gap-2 text-sm rounded-sm bg-[#D00515] px-6 py-3 font-semibold overflow-hidden transition-all duration-300 hover:gap-3 hover:pr-5 hover:shadow-lg"
+              className="group relative inline-flex items-center gap-2 text-sm rounded-sm bg-[#D00515] px-6 py-3 font-semibold overflow-hidden transition-all duration-300 hover:gap-3 hover:pr-5 hover:shadow-lg w-full sm:w-auto justify-center"
             >
               <Phone className="relative z-10 h-5 w-5 transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110" />
 
@@ -49,17 +49,20 @@ export default function Footer() {
             </Link>
 
             {/* Navigation */}
-            <div>
-              <ul className="space-y-3 text-md text-white flex gap-15 text-bold">
+            <nav>
+              <ul className="flex flex-wrap justify-center lg:justify-end gap-x-6 gap-y-3 text-sm md:text-base font-bold text-white">
                 <li>
-                  <Link href="/" className="hover:text-red-500 transition">
+                  <Link
+                    href="/"
+                    className="hover:text-red-500 transition px-2 py-1 inline-block"
+                  >
                     Home
                   </Link>
                 </li>
                 <li>
                   <Link
                     href={"/about-us" as Route}
-                    className="hover:text-red-500 transition"
+                    className="hover:text-red-500 transition px-2 py-1 inline-block"
                   >
                     About Us
                   </Link>
@@ -67,89 +70,111 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/services"
-                    className="hover:text-red-500 transition"
+                    className="hover:text-red-500 transition px-2 py-1 inline-block"
                   >
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog" className="hover:text-red-500 transition">
+                  <Link
+                    href="/blog"
+                    className="hover:text-red-500 transition px-2 py-1 inline-block"
+                  >
                     Blog
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/portfolio"
-                    className="hover:text-red-500 transition"
+                    className="hover:text-red-500 transition px-2 py-1 inline-block"
                   >
                     Portfolio
                   </Link>
                 </li>
               </ul>
-            </div>
+            </nav>
           </div>
         </div>
-        {/* Divider */}
       </div>
+
       <div className="container">
         <div className="border-t border-white/40" />
       </div>
-      {/* Middle Section */}
-      <div className="container py-8">
-        <div className="grid gap-16 md:grid-cols-4">
-          {/* Logo + Text */}
-          <div className="col-span-2">
-            <Image
-              src={imageConfig.url("/yourlogo.png")}
-              alt="Zinavo - Professional Web Solutions"
-              width={250}
-              height={250}
-              className="mb-6 inline-block rounded-lg bg-white"
-            />
 
-            <p className="mb-6 text-sm leading-relaxed text-white max-w-lg">
-              Every Item Is Packed And Handled With Extreme Care.Lorem Ipsum
+      {/* Middle Section */}
+      <div className="container py-12">
+        <div className="grid gap-6 md:gap-12 lg:grid-cols-4">
+          {/* Logo + Text */}
+          <div className="col-span-1 lg:col-span-2">
+            <div className="mb-6 flex justify-start">
+              <Image
+                src={imageConfig.url("/yourlogo.png")}
+                alt="Zinavo - Professional Web Solutions"
+                width={200}
+                height={60}
+                className="rounded-lg bg-white p-2"
+              />
+            </div>
+
+            <p className="mx-auto  md:mx-0 mb-6 text-sm leading-relaxed text-white max-w-lg">
+              Every Item Is Packed And Handled With Extreme Care. Lorem Ipsum
               Dolor Sit Amet Consectetur. Varius Imperdiet Enim Donec Justo
               Ornare Imperdiet Sit A Pulvinar.
             </p>
 
-            <div className="flex gap-4">
+            <div className="flex justify-start gap-4">
               <AnimatedSocialIcon href="https://www.facebook.com/zinavopvtltd/">
-                <Facebook className="h-7 w-7 cursor-pointer hover:text-red-500" />
+                <Facebook className="h-6 w-6 cursor-pointer hover:text-red-500" />
               </AnimatedSocialIcon>
               <AnimatedSocialIcon href="https://www.instagram.com/zinavopvtltd/">
-                <Instagram className="h-7 w-7 cursor-pointer hover:text-red-500" />
+                <Instagram className="h-6 w-6 cursor-pointer hover:text-red-500" />
               </AnimatedSocialIcon>
               <AnimatedSocialIcon href="https://x.com/Zinavogroup">
-                <Twitter className="h-7 w-7 cursor-pointer hover:text-red-500" />
+                <Twitter className="h-6 w-6 cursor-pointer hover:text-red-500" />
               </AnimatedSocialIcon>
               <AnimatedSocialIcon href="https://www.linkedin.com/company/zinavo/mycompany/">
-                <Linkedin className="h-7 w-7 cursor-pointer hover:text-red-500" />
+                <Linkedin className="h-6 w-6 cursor-pointer hover:text-red-500" />
               </AnimatedSocialIcon>
             </div>
           </div>
 
           {/* Services */}
-          <div className="col-span-1">
-            <h4 className="mb-4 text-lg font-semibold uppercase">
-              Interactive Web Solutions
+          <div className="col-span-1 text-left">
+            <h4 className="mb-3 md:mb-6 text-lg font-semibold uppercase tracking-wider">
+              Web Solutions
             </h4>
             <ul className="space-y-3 text-sm text-white">
-              <li>CMS Website Development</li>
-              <li>Ecommerce Website Development</li>
-              <li>Responsive Web Design</li>
-              <li>Website Maintenance Services</li>
-              <li>WordPress Development</li>
-              <li>Website Development / Maintenance</li>
-              <li>E-Commerce Development</li>
+              <li className="hover:text-white transition cursor-pointer">
+                CMS Website Development
+              </li>
+              <li className="hover:text-white transition cursor-pointer">
+                Ecommerce Website Development
+              </li>
+              <li className="hover:text-white transition cursor-pointer">
+                Responsive Web Design
+              </li>
+              <li className="hover:text-white transition cursor-pointer">
+                Website Maintenance Services
+              </li>
+              <li className="hover:text-white transition cursor-pointer">
+                WordPress Development
+              </li>
+              <li className="hover:text-white transition cursor-pointer">
+                Website Development
+              </li>
+              <li className="hover:text-white transition cursor-pointer">
+                E-Commerce Development
+              </li>
             </ul>
           </div>
 
           {/* Address */}
-          <div className="col-span-1">
-            <h4 className="mb-4 text-lg font-semibold">Address</h4>
+          <div className="col-span-1 text-left">
+            <h4 className="mb-3 md:mb-6 text-lg font-semibold uppercase tracking-wider">
+              Address
+            </h4>
             <p className="text-sm leading-relaxed text-white">
-              Every Item Is Packed And Handled With Extreme Care.Lorem Ipsum
+              Every Item Is Packed And Handled With Extreme Care. Lorem Ipsum
               Dolor Sit Amet Consectetur.
             </p>
           </div>
@@ -157,33 +182,41 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/20 px-40">
-        <div className="container flex  flex-col items-center justify-between gap-4 px-6 py-1 text-sm text-white md:flex-row">
-          <p>Copyright © 2021 All rights reserved.</p>
-          <p>
-            website designed by <Link href="https://zinavo.com">zinavo</Link>
-          </p>
-          <div className="flex gap-4">
-            <Link
-              href={"/terms" as Route}
-              className="hover:text-red-500 transition"
-            >
-              Terms and conditional
-            </Link>
-            <span>|</span>
-            <Link
-              href={"/privacy" as Route}
-              className="hover:text-red-500 transition"
-            >
-              Privacy policy
-            </Link>
-            <span>|</span>
-            <Link
-              href={"/cookies" as Route}
-              className="hover:text-red-500 transition"
-            >
-              Cookies
-            </Link>
+      <div className="border-t border-white/10 bg-black/20">
+        <div className="container flex items-center justify-between gap-2 md:gap-6 py-4 md:py-8 text-sm text-white md:flex-row xl:py-2">
+          <div className="md:flex items-center text-center md:justify-between gap-2 w-full">
+            <p>Copyright © 2021 All rights reserved.</p>
+            <p>
+              Website designed by{" "}
+              <Link
+                href="https://zinavo.com"
+                className=" hover:text-red-500 transition underline-offset-4 no-underline"
+              >
+                zinavo
+              </Link>
+            </p>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+              <Link
+                href={"/terms" as Route}
+                className="hover:text-white transition"
+              >
+                Terms & Conditions
+              </Link>
+              <span className="hidden sm:inline text-white/20">|</span>
+              <Link
+                href={"/privacy" as Route}
+                className="hover:text-white transition"
+              >
+                Privacy Policy
+              </Link>
+              <span className="hidden sm:inline text-white/20">|</span>
+              <Link
+                href={"/cookies" as Route}
+                className="hover:text-white transition"
+              >
+                Cookies
+              </Link>
+            </div>
           </div>
         </div>
       </div>

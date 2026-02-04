@@ -33,28 +33,32 @@ const _TechBubble = ({ label, index }: TechBubbleProps) => {
   );
 };
 
-interface DevTapsContentProps {
+interface DevTabsContentProps {
   title: string;
   desc: string;
 }
 
-const DevTapsContent = ({ title, desc }: DevTapsContentProps) => (
-  <div className="w-full h-[500px] rounded-3xl overflow-hidden relative border border-white/5">
+const DevTabsContent = ({ title, desc }: DevTabsContentProps) => (
+  <div className="container min-h-[400px] lg:h-[500px] rounded-2xl lg:rounded-3xl overflow-hidden relative border border-white/5">
     <Image
       src={imageConfig.url("bg-Process.png")}
       alt="Process"
       fill
       className="object-cover"
     />
-    {/* Grid Content */}
-    <div className="h-full grid grid-cols-1 lg:grid-cols-2 relative z-20">
-      {/* Left: Text Content */}
-      <div className="p-12 flex flex-col justify-center space-y-6">
-        <h3 className="text-3xl font-bold text-white leading-tight">{title}</h3>
-        <p className="text-white leading-relaxed text-base!">{desc}</p>
+    {/* Content Container */}
+    <div className="h-full relative z-20">
+      {/* Center Text Content */}
+      <div className="w-full h-full p-6 py-12 md:p-12 flex flex-col justify-center items-center text-center md:items-start md:text-left space-y-4 md:space-y-6">
+        <h3 className="text-xl md:text-3xl font-bold text-white leading-tight max-w-full md:max-w-none">
+          {title}
+        </h3>
+        <p className="text-white/80 leading-relaxed text-sm md:text-base max-w-full md:max-w-md lg:max-w-2xl xl:max-w-3xl">
+          {desc}
+        </p>
       </div>
     </div>
   </div>
 );
 
-export default DevTapsContent;
+export default DevTabsContent;

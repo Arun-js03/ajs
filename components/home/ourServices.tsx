@@ -113,7 +113,7 @@ const ServicesSlider = () => {
 
   const size = 60;
   return (
-    <div className="relative py-10 flex flex-col items-center justify-center overflow-hidden">
+    <div className="relative py-6 md:py-10 flex flex-col items-center justify-center overflow-hidden">
       <Image
         src={imageConfig.url("/service-banner.png")}
         alt="Zinavo Services Background"
@@ -123,10 +123,10 @@ const ServicesSlider = () => {
       />
       {/* Header */}
       <div className="relative z-10 space-y-3 text-center">
-        <h2 className="italic font-semibold text-2xl text-white">
+        <h2 className="italic font-semibold text-xl md:text-2xl text-white">
           Our Services
         </h2>
-        <h3 className="font-bold text-3xl text-white">
+        <h3 className="font-bold text-2xl md:text-3xl text-white">
           Comprehensive Digital Solutions
         </h3>
       </div>
@@ -199,7 +199,7 @@ const ServicesSlider = () => {
               alt="logo"
               width={size}
               height={size}
-              className="relative z-10"
+              className="relative z-10 mb-5 md:mb-0"
               priority
             />
           </div>

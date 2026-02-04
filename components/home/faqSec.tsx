@@ -28,12 +28,14 @@ export default function FaqSec() {
       />
       {/* Header */}
       <div className="relative z-10 text-center text-white space-y-3">
-        <h3 className="italic font-bold text-2xl">FAQ</h3>
-        <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
+        <h3 className="italic font-bold text-xl md:text-2xl">FAQ</h3>
+        <h2 className="text-2xl md:text-3xl font-bold">
+          Frequently Asked Questions
+        </h2>
       </div>
 
       {/* Content */}
-      <section className="relative z-10 p-10">
+      <section className="relative z-10 p-4 md:p-10">
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2">
           {[0, 1].map((col) => (
             <Accordion key={col} className="space-y-6 border-0">

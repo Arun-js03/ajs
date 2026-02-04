@@ -12,7 +12,7 @@ export default function Banner() {
         width={1920}
         height={300}
         alt="Zinavo Web Design Services Banner"
-        className="w-full h-screen object-cover"
+        className="w-full h-[50vh] md:h-screen object-cover"
         priority
       />
     </div>
