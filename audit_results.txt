@@ -1,0 +1,19 @@
+[0.35ms] ".env"
+bun audit v1.3.8 (b64edcb4)
+hono  <4.11.4
+  @modelcontextprotocol/sdk ΓÇ║ @hono/node-server ΓÇ║ hono
+  high: Hono JWK Auth Middleware has JWT algorithm confusion when JWK lacks "alg" (untrusted header.alg fallback) - https://github.com/advisories/GHSA-3vhc-576x-3qv4
+  high: Hono JWT Middleware's JWT Algorithm Confusion via Unsafe Default (HS256) Allows Token Forgery and Auth Bypass - https://github.com/advisories/GHSA-f67f-6cw9-8mq4
+  moderate: Hono vulnerable to XSS through ErrorBoundary component  - https://github.com/advisories/GHSA-9r54-q6cx-xmh5
+  moderate: Hono has an Arbitrary Key Read in Serve static Middleware (Cloudflare Workers Adapter) - https://github.com/advisories/GHSA-w332-q679-j88p
+  moderate: Hono cache middleware ignores "Cache-Control: private" leading to Web Cache Deception - https://github.com/advisories/GHSA-6wqw-2p9w-4vw4
+  moderate: Hono IPv4 address validation bypass in IP Restriction Middleware allows IP spoofing - https://github.com/advisories/GHSA-r354-f388-2fhh
+
+6 vulnerabilities (2 high, 4 moderate)
+
+To update all dependencies to the latest compatible versions:
+  bun update
+
+To update all dependencies to the latest versions (including breaking changes):
+  bun update --latest
+

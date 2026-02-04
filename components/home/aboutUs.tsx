@@ -58,7 +58,7 @@ export default function AboutUs() {
 
           <div className="flex justify-start">
             <Link
-              href="/about"
+              href="/about-us"
               className="group inline-flex px-8 py-3 text-sm font-bold text-white gap-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(208,5,21,0.5)] hover:brightness-110"
               style={{
                 borderRadius: "10px",
