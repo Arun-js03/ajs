@@ -82,7 +82,7 @@ export default function AboutUs() {
         <div className="space-y-8">
           <div className="relative group overflow-hidden rounded-2xl shadow-2xl border border-white/10 mx-auto max-w-[500px] md:max-w-none">
             <Image
-              src={imageConfig.url("/aboutUsImg.png")}
+              src={imageConfig.url("/aboutUsImg.webp")}
               alt="About Us"
               width={600}
               height={600}

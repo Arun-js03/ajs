@@ -7,42 +7,42 @@ import { imageConfig } from "@/lib/imageConfig";
 const images = [
   {
     id: 1,
-    image: "/business.jpg",
+    image: "/business.webp",
     title: "Experience You Can Trust",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   },
   {
     id: 2,
-    image: "/datadriven.png",
+    image: "/datadriven.webp",
     title: "Data-Driven Results",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   },
   {
     id: 3,
-    image: "/futurevision.jpg",
+    image: "/futurevision.webp",
     title: "Long-Term Partnership",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   },
   {
     id: 4,
-    image: "/experts.jpg",
+    image: "/experts.webp",
     title: "Experts at Every Step",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   },
   {
     id: 5,
-    image: "/hightech.png",
+    image: "/hightech.webp",
     title: "A World of Knowledge",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   },
   {
     id: 6,
-    image: "/dynamicdata.jpg",
+    image: "/dynamicdata.webp",
     title: "Scalability for Growth",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.",

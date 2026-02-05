@@ -8,12 +8,11 @@ export default function Banner() {
         Zinavo - Professional Web Design & Development Company
       </h1>
       <Image
-        src={imageConfig.url("/homeBanner.jpg")}
+        src={imageConfig.url("/homeBanner.webp")}
         width={1920}
         height={300}
         alt="Zinavo Web Design Services Banner"
         className="w-full h-[50vh] md:h-screen object-cover"
-        priority
       />
     </div>
   );

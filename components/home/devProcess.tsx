@@ -20,42 +20,42 @@ export default function ProcessScrollSection() {
     {
       id: 1,
       title: "Requirement Gathering",
-      image: "/processImg.png",
+      image: "/processImg.webp",
       describe:
         "Lorem ipsum dolor sit amet consectetur. Sit id amet amet velit lorem neque tincidunt mi tortor. Vestibulum vestibulum malesuada vel feugiat ut ultrices. Lacus ut vitae semper egestas enim nisl tempor nunc nulla. Adipiscing consequat maecenas venenatis elit non laoreet varius massa et. Iaculis aenean magna rhoncus integer bibendum mauris.",
     },
     {
       id: 2,
       title: "Planning & Analysis",
-      image: "/processImg.png",
+      image: "/processImg.webp",
       describe:
         "Lorem ipsum dolor sit amet consectetur. Sit id amet amet velit lorem neque tincidunt mi tortor. Vestibulum vestibulum malesuada vel feugiat ut ultrices. Lacus ut vitae semper egestas enim nisl tempor nunc nulla. Adipiscing consequat maecenas venenatis elit non laoreet varius massa et. Iaculis aenean magna rhoncus integer bibendum mauris.",
     },
     {
       id: 3,
       title: "Design Phase",
-      image: "/processImg.png",
+      image: "/processImg.webp",
       describe:
         "Lorem ipsum dolor sit amet consectetur. Sit id amet amet velit lorem neque tincidunt mi tortor. Vestibulum vestibulum malesuada vel feugiat ut ultrices. Lacus ut vitae semper egestas enim nisl tempor nunc nulla. Adipiscing consequat maecenas venenatis elit non laoreet varius massa et. Iaculis aenean magna rhoncus integer bibendum mauris.",
     },
     {
       id: 4,
       title: "Development",
-      image: "/processImg.png",
+      image: "/processImg.webp",
       describe:
         "Lorem ipsum dolor sit amet consectetur. Sit id amet amet velit lorem neque tincidunt mi tortor. Vestibulum vestibulum malesuada vel feugiat ut ultrices. Lacus ut vitae semper egestas enim nisl tempor nunc nulla. Adipiscing consequat maecenas venenatis elit non laoreet varius massa et. Iaculis aenean magna rhoncus integer bibendum mauris.",
     },
     {
       id: 5,
       title: "Testing & QA",
-      image: "/processImg.png",
+      image: "/processImg.webp",
       describe:
         "Lorem ipsum dolor sit amet consectetur. Sit id amet amet velit lorem neque tincidunt mi tortor. Vestibulum vestibulum malesuada vel feugiat ut ultrices. Lacus ut vitae semper egestas enim nisl tempor nunc nulla. Adipiscing consequat maecenas venenatis elit non laoreet varius massa et. Iaculis aenean magna rhoncus integer bibendum mauris.",
     },
     {
       id: 6,
       title: "Deployment",
-      image: "/processImg.png",
+      image: "/processImg.webp",
       describe:
         "Lorem ipsum dolor sit amet consectetur. Sit id amet amet velit lorem neque tincidunt mi tortor. Vestibulum vestibulum malesuada vel feugiat ut ultrices. Lacus ut vitae semper egestas enim nisl tempor nunc nulla. Adipiscing consequat maecenas venenatis elit non laoreet varius massa et. Iaculis aenean magna rhoncus integer bibendum mauris.",
     },
