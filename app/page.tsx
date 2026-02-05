@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import AboutUs from "@/components/home/aboutUs";
+import dynamic from "next/dynamic";
 import Banner from "@/components/home/banner";
-import BlogSec from "@/components/home/blogSec";
-import ProcessScrollSection from "@/components/home/devProcess";
-import FaqSec from "@/components/home/faqSec";
-import Industries from "@/components/home/industries";
-import LogoSlider from "@/components/home/Logos";
-import OurPortfolio from "@/components/home/ourPortfolio";
-import ServicesSlider from "@/components/home/ourServices";
-import Testimonial from "@/components/home/testimonial";
-import WebsitesTabs from "@/components/home/webDevProcess";
-import WhyChoose from "@/components/home/whyChoose";
+
+const AboutUs = dynamic(() => import("@/components/home/aboutUs"));
+const BlogSec = dynamic(() => import("@/components/home/blogSec"));
+const ProcessScrollSection = dynamic(
+  () => import("@/components/home/devProcess"),
+);
+const FaqSec = dynamic(() => import("@/components/home/faqSec"));
+const Industries = dynamic(() => import("@/components/home/industries"));
+const LogoSlider = dynamic(() => import("@/components/home/Logos"));
+const OurPortfolio = dynamic(() => import("@/components/home/ourPortfolio"));
+const ServicesSlider = dynamic(() => import("@/components/home/ourServices"));
+const Testimonial = dynamic(() => import("@/components/home/testimonial"));
+const WebsitesTabs = dynamic(() => import("@/components/home/webDevProcess"));
+const WhyChoose = dynamic(() => import("@/components/home/whyChoose"));
 
 export const metadata: Metadata = {
   title: "Home",

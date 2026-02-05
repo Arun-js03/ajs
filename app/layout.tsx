@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { DM_Sans, Inter } from "next/font/google";
-import "./styles/globals.css";
-import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import SmoothScroll from "@/components/layout/smoothscroll";
 import JsonLd from "@/components/seo/json-ld";
+import "./styles/globals.css";
+import Footer from "@/components/layout/footer";
 
 const inter = Inter({
   subsets: ["latin"],
