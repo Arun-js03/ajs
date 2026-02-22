@@ -6,8 +6,7 @@ const nextConfig: NextConfig = {
   typedRoutes: true,
   reactCompiler: true,
 
-  basePath: "/ajsaura",
-  assetPrefix: "/ajsaura/",
+
 
   images: {
     formats: ["image/avif", "image/webp"],
