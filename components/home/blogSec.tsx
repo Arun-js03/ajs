@@ -47,7 +47,7 @@ export default function BlogSec() {
       <div className="relative lg:sticky lg:top-0 overflow-hidden flex flex-col justify-center py-10 lg:py-0">
         <Image
           src={imageConfig.url("/blog-banner.png")}
-          alt="Zinavo Blog Background"
+          alt="AJS Aura Blog Background"
           fill
           className="object-cover -z-10"
         />

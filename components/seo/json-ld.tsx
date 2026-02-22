@@ -2,13 +2,13 @@ export default function JsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://zinavo.com/#organization",
-    name: "Zinavo Technologies",
-    url: "https://zinavo.com",
-    logo: "https://zinavo.com/logo.png",
-    image: "https://zinavo.com/aboutUsImg.png",
+    "@id": "https://ajsaura.com/#organization",
+    name: "AJS Aura Technologies",
+    url: "https://ajsaura.com",
+    logo: "https://ajsaura.com/logo.png",
+    image: "https://ajsaura.com/aboutUsImg.png",
     description:
-      "Zinavo is a leading web design and development company in Bangalore, offering custom web solutions, SEO, and digital marketing.",
+      "AJS Aura is a leading web design and development company in Bangalore, offering custom web solutions, SEO, and digital marketing.",
     telephone: "+91-8035694395",
     priceRange: "$$",
     address: {
@@ -34,10 +34,10 @@ export default function JsonLd() {
       },
     ],
     sameAs: [
-      "https://www.facebook.com/zinavopvtltd/",
-      "https://x.com/Zinavogroup",
-      "https://www.linkedin.com/company/zinavo/",
-      "https://www.instagram.com/zinavopvtltd/",
+      "https://www.facebook.com/ajsaurapvtltd/",
+      "https://x.com/Ajsauragroup",
+      "https://www.linkedin.com/company/ajsaura/",
+      "https://www.instagram.com/ajsaurapvtltd/",
     ],
   };
 

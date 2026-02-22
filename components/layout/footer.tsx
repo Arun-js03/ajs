@@ -36,7 +36,7 @@ export default function Footer() {
           {/* Call Button & Navigation */}
           <div className="flex flex-col items-center lg:items-end gap-8 lg:gap-[60px]! justify-between mt-8 lg:mt-20">
             <Link
-              href="tel:+918035694395"
+              href="#"
               className="group relative inline-flex items-center gap-2 text-sm rounded-sm bg-[#D00515] px-6 py-3 font-semibold overflow-hidden transition-all duration-300 hover:gap-3 hover:pr-5 hover:shadow-lg w-full sm:w-auto justify-center"
             >
               <Phone className="relative z-10 h-5 w-5 transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110" />
@@ -109,7 +109,7 @@ export default function Footer() {
             <div className="mb-6 flex justify-start">
               <Image
                 src={imageConfig.url("/yourlogo.png")}
-                alt="Zinavo - Professional Web Solutions"
+                alt="AJS Aura - Professional Web Solutions"
                 width={200}
                 height={60}
                 className="rounded-lg bg-white p-2"
@@ -123,16 +123,16 @@ export default function Footer() {
             </p>
 
             <div className="flex justify-start gap-4">
-              <AnimatedSocialIcon href="https://www.facebook.com/zinavopvtltd/">
+              <AnimatedSocialIcon href="#">
                 <Facebook className="h-6 w-6 cursor-pointer hover:text-red-500" />
               </AnimatedSocialIcon>
-              <AnimatedSocialIcon href="https://www.instagram.com/zinavopvtltd/">
+              <AnimatedSocialIcon href="#">
                 <Instagram className="h-6 w-6 cursor-pointer hover:text-red-500" />
               </AnimatedSocialIcon>
-              <AnimatedSocialIcon href="https://x.com/Zinavogroup">
+              <AnimatedSocialIcon href="#">
                 <Twitter className="h-6 w-6 cursor-pointer hover:text-red-500" />
               </AnimatedSocialIcon>
-              <AnimatedSocialIcon href="https://www.linkedin.com/company/zinavo/mycompany/">
+              <AnimatedSocialIcon href="#">
                 <Linkedin className="h-6 w-6 cursor-pointer hover:text-red-500" />
               </AnimatedSocialIcon>
             </div>
@@ -186,36 +186,13 @@ export default function Footer() {
         <div className="container flex items-center justify-between gap-2 md:gap-6 py-4 md:py-8 text-sm text-white md:flex-row xl:py-2">
           <div className="md:flex items-center text-center md:justify-between gap-2 w-full">
             <p>Copyright © 2021 All rights reserved.</p>
-            <p>
-              Website designed by{" "}
-              <Link
-                href="https://zinavo.com"
-                className=" hover:text-red-500 transition underline-offset-4 no-underline"
-              >
-                zinavo
-              </Link>
-            </p>
+            <p>Website designed by arun</p>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-              <Link
-                href={"/terms" as Route}
-                className="hover:text-white transition"
-              >
-                Terms & Conditions
-              </Link>
+              Terms & Conditions
               <span className="hidden sm:inline text-white/20">|</span>
-              <Link
-                href={"/privacy" as Route}
-                className="hover:text-white transition"
-              >
-                Privacy Policy
-              </Link>
+              Privacy Policy
               <span className="hidden sm:inline text-white/20">|</span>
-              <Link
-                href={"/cookies" as Route}
-                className="hover:text-white transition"
-              >
-                Cookies
-              </Link>
+              Cookies
             </div>
           </div>
         </div>

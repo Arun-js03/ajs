@@ -18,42 +18,42 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://zinavo.com",
+    process.env.NEXT_PUBLIC_SITE_URL || "https://ajsaura.com",
   ),
   title: {
-    default: "Zinavo - Professional Web Design & Development Company",
-    template: "%s | Zinavo",
+    default: "AJS Aura - Professional Web Design & Development Company",
+    template: "%s | AJS Aura",
   },
   description:
-    "Zinavo is a leading web design and development company offering professional website design, custom web application development, SEO, and digital marketing services.",
+    "AJS Aura is a leading web design and development company offering professional website design, custom web application development, SEO, and digital marketing services.",
   keywords: [
     "Web Design",
     "Web Development",
     "SEO Services",
     "Digital Marketing",
     "E-commerce Development",
-    "Zinavo",
+    "AJS Aura",
   ],
-  authors: [{ name: "Zinavo" }],
-  creator: "Zinavo",
-  publisher: "Zinavo",
+  authors: [{ name: "AJS Aura" }],
+  creator: "AJS Aura",
+  publisher: "AJS Aura",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: "Zinavo - Professional Web Design & Development Company",
+    title: "AJS Aura - Professional Web Design & Development Company",
     description:
-      "Zinavo is a leading web design and development company offering professional website design, custom web application development, SEO, and digital marketing services.",
-    url: "https://zinavo.com",
-    siteName: "Zinavo",
+      "AJS Aura is a leading web design and development company offering professional website design, custom web application development, SEO, and digital marketing services.",
+    url: "https://ajsaura.com",
+    siteName: "AJS Aura",
     images: [
       {
-        url: "/zinavologo.png",
+        url: "/ajsauralogo.png",
         width: 1200,
         height: 630,
-        alt: "Zinavo - Web Design & Development",
+        alt: "AJS Aura - Web Design & Development",
       },
     ],
     locale: "en_US",
@@ -61,11 +61,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zinavo - Professional Web Design & Development Company",
+    title: "AJS Aura - Professional Web Design & Development Company",
     description:
-      "Zinavo is a leading web design and development company offering professional website design, custom web application development, SEO, and digital marketing services.",
-    images: ["/zinavologo.png"],
-    creator: "@zinavo",
+      "AJS Aura is a leading web design and development company offering professional website design, custom web application development, SEO, and digital marketing services.",
+    images: ["/ajsauralogo.png"],
+    creator: "@ajsaura",
   },
   robots: {
     index: true,
@@ -85,9 +85,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/zinavologo.png",
-    shortcut: "/zinavologo.png",
-    apple: "/zinavologo.png",
+    icon: "/ajsauralogo.png",
+    shortcut: "/ajsauralogo.png",
+    apple: "/ajsauralogo.png",
   },
 };
 

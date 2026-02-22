@@ -1,11 +1,38 @@
+"use client";
+
+import {
+  animate,
+  motion,
+  useInView,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 import { imageConfig } from "@/lib/imageConfig";
 
 const years = [
-  { id: 1, value: "13+ Year", title: "of Experience" },
-  { id: 2, value: "1000+ ", title: "Projects" },
+  { id: 1, value: 10, suffix: "+ Year", title: "of Experience" },
+  { id: 2, value: 1000, suffix: "+ ", title: "Projects" },
 ];
+
+function CountUp({ to }: { to: number }) {
+  const nodeRef = useRef(null);
+  const inView = useInView(nodeRef, { once: true });
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+
+  useEffect(() => {
+    if (inView) {
+      const animation = animate(count, to, { duration: 2, ease: "easeOut" });
+      return animation.stop;
+    }
+  }, [inView, to, count]);
+
+  return <motion.span ref={nodeRef}>{rounded}</motion.span>;
+}
+
 export default function AboutUs() {
   return (
     <div className="space-top relative overflow-hidden rounded-2xl">
@@ -13,7 +40,7 @@ export default function AboutUs() {
       <div className="absolute inset-0 z-0">
         <Image
           src={imageConfig.url("/about-banner.png")}
-          alt="Zinavo Team Working Background"
+          alt="AJS Aura Team Working Background"
           fill
           className="object-cover"
           priority
@@ -86,6 +113,7 @@ export default function AboutUs() {
               alt="About Us"
               width={600}
               height={600}
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105"
             />
           </div>
@@ -96,7 +124,10 @@ export default function AboutUs() {
                 key={year.id}
                 className="bg-[linear-gradient(180deg,rgba(25,1,3,0.85)_0%,#D00515_100%)] p-2 md:p-8 rounded-2xl justify-center flex flex-col items-center space-y-2 border border-white/10 shadow-lg text-center"
               >
-                <h4 className="font-bold text-lg md:text-3xl ">{year.value}</h4>
+                <h4 className="font-bold text-lg md:text-3xl ">
+                  <CountUp to={year.value} />
+                  {year.suffix}
+                </h4>
                 <div className="font-semibold text-base md:text-2xl italic opacity-90">
                   {year.title}
                 </div>

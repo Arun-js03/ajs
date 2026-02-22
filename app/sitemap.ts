@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://zinavo.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ajsaura.com";
 
   // Add dynamic routes here if you have a database or CMS source
   // const posts = await getPosts();

@@ -1,4 +1,4 @@
-const DEFAULT_PATH = "/zinavo";
+const DEFAULT_PATH = "/ajsaura";
 
 // Precompute basePath for server & client (avoids getter recalculation)
 const rawBasePath = process.env.NEXT_PUBLIC_IMAGE_PATH?.replace(/\/$/, "");

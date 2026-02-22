@@ -116,7 +116,7 @@ const ServicesSlider = () => {
     <div className="relative py-6 md:py-10 flex flex-col items-center justify-center overflow-hidden">
       <Image
         src={imageConfig.url("/service-banner.png")}
-        alt="Zinavo Services Background"
+        alt="AJS Aura Services Background"
         width={100}
         height={100}
         className="absolute inset-0 w-full h-full object-cover"
@@ -195,7 +195,7 @@ const ServicesSlider = () => {
 
             {/* Logo */}
             <Image
-              src={imageConfig.url("zinavologo.png")}
+              src={imageConfig.url("community.png")}
               alt="logo"
               width={size}
               height={size}

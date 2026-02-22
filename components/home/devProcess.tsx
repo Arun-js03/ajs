@@ -121,6 +121,7 @@ export default function ProcessScrollSection() {
                     alt={item.title}
                     width={290}
                     height={290}
+                    sizes="290px"
                     className="h-50 w-70 object-cover pl-20"
                   />
 
@@ -175,6 +176,7 @@ export default function ProcessScrollSection() {
                   src={imageConfig.url(item.image)}
                   alt={item.title}
                   fill
+                  sizes="(max-width: 768px) 256px, 320px"
                   className="object-cover"
                 />
               </div>

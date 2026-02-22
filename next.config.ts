@@ -6,8 +6,8 @@ const nextConfig: NextConfig = {
   typedRoutes: true,
   reactCompiler: true,
 
-  basePath: "/zinavo",
-  assetPrefix: "/zinavo/",
+  basePath: "/ajsaura",
+  assetPrefix: "/ajsaura/",
 
   images: {
     formats: ["image/avif", "image/webp"],

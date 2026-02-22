@@ -19,7 +19,7 @@ const WhyChoose = dynamic(() => import("@/components/home/whyChoose"));
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "Welcome to Zinavo - Your partner for high-quality web design, development, and SEO services in Bangalore, India.",
+    "Welcome to AJS Aura - Your partner for high-quality web design, development, and SEO services in Bangalore, India.",
 };
 
 export default function Page() {

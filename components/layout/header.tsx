@@ -26,12 +26,12 @@ export default function Header() {
 
   const menu = [
     { label: "Home", path: "/" },
-    { label: "About Us", path: "/about-us" },
-    { label: "Our Services", path: "/services" },
-    { label: "Portfolio", path: "/portfolio" },
-    { label: "Clients", path: "/clients" },
-    { label: "Plugins", path: "/plugins" },
-    { label: "Blog", path: "/blog" },
+    { label: "About Us", path: "#" },
+    { label: "Our Services", path: "#" },
+    { label: "Portfolio", path: "#" },
+    { label: "Clients", path: "#" },
+    { label: "Plugins", path: "#" },
+    { label: "Blog", path: "#" },
   ];
   return (
     <header className="w-full">
@@ -41,25 +41,25 @@ export default function Header() {
         <div className="bg-[#4C3F3C] text-white hidden lg:block">
           <div className="container mx-auto flex justify-between items-center py-2 text-base px-9!">
             <div className="flex gap-4 ">
-              <AnimatedSocialIcon href="https://www.facebook.com/zinavopvtltd/">
+              <AnimatedSocialIcon href="#">
                 <Facebook
                   size={20}
                   className="cursor-pointer hover:text-red-500"
                 />
               </AnimatedSocialIcon>
-              <AnimatedSocialIcon href="https://www.instagram.com/zinavopvtltd/">
+              <AnimatedSocialIcon href="#">
                 <Instagram
                   size={20}
                   className="cursor-pointer hover:text-red-500"
                 />
               </AnimatedSocialIcon>
-              <AnimatedSocialIcon href="https://x.com/Zinavogroup">
+              <AnimatedSocialIcon href="#">
                 <Twitter
                   size={20}
                   className="cursor-pointer hover:text-red-500"
                 />
               </AnimatedSocialIcon>
-              <AnimatedSocialIcon href="https://www.linkedin.com/company/zinavo/mycompany/">
+              <AnimatedSocialIcon href="#">
                 <Linkedin
                   size={20}
                   className="cursor-pointer hover:text-red-500"
@@ -69,39 +69,31 @@ export default function Header() {
             {/* Right Side Info */}
             <div className="flex gap-6 items-center">
               <div className=" cursor-pointer">
-                <AnimatedSocialIcon href="mailto:info@zinavo.com">
-                  <Link
-                    href="mailto:info@zinavo.com"
-                    className="flex items-center gap-1"
-                  >
-                    <Mail size={18} /> info@zinavo.com
+                <AnimatedSocialIcon href="#">
+                  <Link href="#" className="flex items-center gap-1">
+                    <Mail size={18} /> info@gmail.com
                   </Link>
                 </AnimatedSocialIcon>
               </div>
 
               <div className="flex items-center gap-1">
-                <AnimatedSocialIcon href="tel:+918035694395">
-                  <Link
-                    href="tel:+918035694395"
-                    className="flex items-center gap-1"
-                  >
+                <AnimatedSocialIcon href="#">
+                  <Link href="#" className="flex items-center gap-1">
                     <Phone size={18} />
-                    +91 8035694395
+                    +1234567890
                   </Link>
                 </AnimatedSocialIcon>
               </div>
 
               <div className="flex items-center gap-1">
-                <AnimatedSocialIcon href="https://wa.me/917760245945">
+                <AnimatedSocialIcon href="#">
                   {" "}
                   <Link
-                    href="https://wa.me/917760245945"
-                    target="_blank"
+                    href="#"
                     rel="noopener noreferrer"
                     className="flex items-center gap-1"
                   >
-                    <HugeiconsIcon icon={WhatsappIcon} size={18} /> +91
-                    7760245945
+                    <HugeiconsIcon icon={WhatsappIcon} size={18} /> 1234567890
                   </Link>
                 </AnimatedSocialIcon>
               </div>
@@ -112,14 +104,14 @@ export default function Header() {
 
       {/* ---------- MAIN NAVBAR ---------- */}
       <div className="absolute md:top-10 top-3 left-0 w-full z-50 px-4">
-        <div className="container mx-auto relative flex items-center justify-between py-4 rounded-2xl border-white border backdrop-blur-md">
+        <div className="container mx-auto relative flex items-center justify-between rounded-2xl border-white border backdrop-blur-md">
           <div className="pl-6">
             <Image
-              src={imageConfig.url("/logo.png")}
-              width={200}
-              height={200}
-              alt="Zinavo - Web Design & Development Company Logo"
-              className="w-40 md:w-50 h-auto"
+              src={imageConfig.url("/dummy-logo-4b.png")}
+              width={150}
+              height={150}
+              alt="AJS Aura - Web Design & Development Company Logo"
+              className="w-30 md:w-40 h-auto"
             />
           </div>
 
@@ -143,7 +135,7 @@ export default function Header() {
               </Link>
             ))}
             <div>
-              <Link href={"/contact-us" as Route} className="cursor-pointer">
+              <Link href={"#" as Route} className="cursor-pointer">
                 <Button className="group relative px-4 py-2 rounded-xl text-base cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-lg">
                   <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
                     Contact Us
@@ -189,7 +181,7 @@ export default function Header() {
                 ))}
                 <div className="pt-2">
                   <Link
-                    href={"/contact-us" as Route}
+                    href={"#" as Route}
                     className="cursor-pointer"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
