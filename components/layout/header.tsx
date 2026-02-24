@@ -116,7 +116,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden xl:flex gap-6 pr-6 items-center font-medium text-white">
+          <div className="hidden xl:flex gap-6 pr-6 items-center font-medium text-black">
             {menu.map((item) => (
               <Link
                 key={item.path}
