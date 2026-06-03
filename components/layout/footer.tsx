@@ -1,11 +1,11 @@
+import { Phone, Star } from "lucide-react";
 import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Phone,
-  Star,
-  Twitter,
-} from "lucide-react";
+  FacebookIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  TwitterIcon,
+} from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -124,16 +124,28 @@ export default function Footer() {
 
             <div className="flex justify-start gap-4">
               <AnimatedSocialIcon href="#">
-                <Facebook className="h-6 w-6 cursor-pointer hover:text-red-500" />
+                <HugeiconsIcon
+                  icon={FacebookIcon}
+                  className="h-6 w-6 cursor-pointer hover:text-red-500"
+                />
               </AnimatedSocialIcon>
               <AnimatedSocialIcon href="#">
-                <Instagram className="h-6 w-6 cursor-pointer hover:text-red-500" />
+                <HugeiconsIcon
+                  icon={InstagramIcon}
+                  className="h-6 w-6 cursor-pointer hover:text-red-500"
+                />
               </AnimatedSocialIcon>
               <AnimatedSocialIcon href="#">
-                <Twitter className="h-6 w-6 cursor-pointer hover:text-red-500" />
+                <HugeiconsIcon
+                  icon={TwitterIcon}
+                  className="h-6 w-6 cursor-pointer hover:text-red-500"
+                />
               </AnimatedSocialIcon>
               <AnimatedSocialIcon href="#">
-                <Linkedin className="h-6 w-6 cursor-pointer hover:text-red-500" />
+                <HugeiconsIcon
+                  icon={LinkedinIcon}
+                  className="h-6 w-6 cursor-pointer hover:text-red-500"
+                />
               </AnimatedSocialIcon>
             </div>
           </div>

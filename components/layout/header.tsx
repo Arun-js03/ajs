@@ -1,17 +1,14 @@
 "use client";
 
-import { WhatsappIcon } from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
 import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Mail,
-  Menu,
-  Phone,
-  Twitter,
-  X,
-} from "lucide-react";
+  WhatsappIcon,
+  FacebookIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  TwitterIcon,
+} from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Mail, Menu, Phone, X } from "lucide-react";
 import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -42,25 +39,29 @@ export default function Header() {
           <div className="container mx-auto flex justify-between items-center py-2 text-base px-9!">
             <div className="flex gap-4 ">
               <AnimatedSocialIcon href="#">
-                <Facebook
+                <HugeiconsIcon
+                  icon={FacebookIcon}
                   size={20}
                   className="cursor-pointer hover:text-red-500"
                 />
               </AnimatedSocialIcon>
               <AnimatedSocialIcon href="#">
-                <Instagram
+                <HugeiconsIcon
+                  icon={InstagramIcon}
                   size={20}
                   className="cursor-pointer hover:text-red-500"
                 />
               </AnimatedSocialIcon>
               <AnimatedSocialIcon href="#">
-                <Twitter
+                <HugeiconsIcon
+                  icon={TwitterIcon}
                   size={20}
                   className="cursor-pointer hover:text-red-500"
                 />
               </AnimatedSocialIcon>
               <AnimatedSocialIcon href="#">
-                <Linkedin
+                <HugeiconsIcon
+                  icon={LinkedinIcon}
                   size={20}
                   className="cursor-pointer hover:text-red-500"
                 />

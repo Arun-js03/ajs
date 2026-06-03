@@ -6,8 +6,6 @@ const nextConfig: NextConfig = {
   typedRoutes: true,
   reactCompiler: true,
 
-
-
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60,
